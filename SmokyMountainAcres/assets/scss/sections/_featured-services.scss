@@ -1,0 +1,78 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Featured Services Section
+--------------------------------------------------------------*/
+.featured-services {
+  .card {
+    background-color: var(--background-color);
+    color: var(--default-color);
+    border: none;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 500px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.9) 75%);
+      z-index: 2;
+    }
+
+    img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 30px;
+
+      h3 {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 0px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent-color);
+
+        a {
+          color: var(--contrast-color);
+        }
+      }
+
+      .card-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.5s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+
+        p {
+          font-size: 15px;
+          padding-top: 10px;
+          margin-bottom: 0;
+          overflow: hidden;
+          color: var(--contrast-color);
+        }
+      }
+    }
+
+    &:hover {
+      .card-content {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

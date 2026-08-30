@@ -1,0 +1,52 @@
+
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="/assets/img/Smoky Mountain Acres/long_logo_flat_transparent.png" alt="Smoky Mountain Acres Logo">
+        <!--h1 class="sitename">Smoky Mountain Acres</h1-->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="/" class="{% if page.url == '/' %}active{% endif %}">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/About-Our-Farm/" class="{% if page.url == '/About-Our-Farm/' %}active{% endif %}">
+              About Our Farm
+            </a>
+          </li>
+
+          <!--li>
+            <a href="/Our-Animals/" class="{% if page.url == '/Our-Animals/' %}active{% endif %}">
+              Our Animals
+            </a>
+          </li-->
+
+          <li>
+            <a href="/gallery/" class="{% if page.url == '/gallery/' %}active{% endif %}">
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="/blog/" class="{% if page.url == '/blog/' %}active{% endif %}">
+              Farm Blog
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact/" class="{% if page.url == '/contact/' %}active{% endif %}">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>

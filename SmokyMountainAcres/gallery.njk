@@ -1,0 +1,86 @@
+--- 
+title: Gallery
+layout: 'base.njk'
+---
+
+    {% set gallery = [
+      {
+        image: "/assets/img/Smoky Mountain Acres/PigsEatingFromMama.JPG",
+        category: "pigs",
+        title: "Kune Kune Pigs",
+        description: "Our friendly pasture-raised Kune Kune pigs."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/PennyTheJuliana2.JPG",
+        category: "pigs",
+        title: "Juliana Pigs",
+        description: "Our very first juliana piglet named Penny."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/PigsandChickens.JPG",
+        category: "pigs",
+        title: "Pigs and Chickens",
+        description: "Our pasture-raised Kune Kune pigs get along great with the chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/barredRock1.JPG",
+        category: "chickens",
+        title: "Chickens",
+        description: "Our chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/FarmerJWithChickens.JPG",
+        category: "chickens",
+        title: "Chickens",
+        description: "Farmer J with the chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/FunnyChickenChase.JPG",
+        category: "chickens",
+        title: "Chicken Chase",
+        description: "We get a kick out of our chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/FarmerJBetweenFences.JPG",
+        category: "farm-life",
+        title: "Working hard",
+        description: "At it again!"
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/KidsWalkingByTower.JPG",
+        category: "farm-life",
+        title: "Play Later",
+        description: "Disciplined farmers walking past their play fort do do their chores."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/RoughPasture.JPG",
+        category: "farm-life",
+        title: "How it Started",
+        description: "This is what the pasture used to look like."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/CosbyFieldAndMountainView.JPG",
+        category: "other",
+        title: "Nearby View from Cosby",
+        description: "A beautiful view on the drive in!"
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/AnimalsInFence.JPG",
+        category: "other",
+        title: "",
+        description: ""
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/BabyChicks2.JPG",
+        category: "chickens",
+        title: "",
+        description: ""
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/BarredRock2.JPG",
+        category: "chickens",
+        title: "",
+        description: ""
+      }
+    ] %}
+    {% include "gallery-include.njk"%}

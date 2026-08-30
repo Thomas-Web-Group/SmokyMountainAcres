@@ -1,0 +1,118 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team {
+  .team {
+    h3 {
+      font-size: 20px;
+
+      a {
+        color: var(--heading-color);
+      }
+    }
+
+    .pic {
+      margin-bottom: 30px;
+
+      img {
+        border-radius: 4px;
+      }
+    }
+
+    .position {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: color-mix(in srgb, var(--heading-color), transparent 30%);
+    }
+  }
+
+  p {
+    line-height: 1.7;
+    color: var(--default-color);
+  }
+
+  .more {
+    position: relative;
+    padding-right: 30px;
+    display: inline-block;
+
+    span {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-size: 16px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      color: var(--contrast-color);
+      line-height: 1.6;
+      text-align: center;
+      transition: 0.3s all ease;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:hover {
+      color: var(--contrast-color);
+
+      span {
+        background: var(--accent-color);
+      }
+    }
+
+    &.dark {
+      color: var(--default-color);
+
+      >span {
+        color: var(--default-color);
+      }
+
+      &:hover {
+        color: var(--accent-color);
+
+        span {
+          color: var(--contrast-color);
+          background: var(--accent-color);
+        }
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    height: auto;
+  }
+
+  .slider-nav {
+    a {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      background: var(--accent-color);
+      border-radius: 4px;
+      transition: 0.2s all ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        color: var(--contrast-color);
+      }
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+      }
+
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+}

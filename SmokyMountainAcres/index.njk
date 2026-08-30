@@ -1,0 +1,120 @@
+--- 
+title: Smoky Mountain Acres
+layout: 'base.njk'
+---
+
+
+
+  
+  <main class="main"><!-- Hero Section -->
+
+    <section id="hero" class="hero section dark-background">
+
+      <div class="container-fluid p-0">
+        <div class="row g-0 m-0" data-aos="fade-up">
+
+          <div class="col-lg-5">
+            <div class="hero-text-panel">
+              <h2>Smoky Mountain Acres</h2>
+
+              <p>
+                Small Farmstead Living in the Smoky Mountains<br/>offering organic pasture rasied animals and produce.
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="/livestock/" class="btn-get-started">View Livestock</a>
+                <a href="/farm-tours/" class="btn-get-started">Learn About Tours</a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-7 text-center d-flex align-items-center justify-content-center">
+            <img
+              src="assets/img/Smoky Mountain Acres/SmokyMountainAcresLogo.png"
+              alt="Smoky Mountain Acres"
+              class="img-fluid"
+            >
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    {% include "about.njk" %}
+    {% include "what-we-offer.njk" %}
+    {% include "our-animals.njk" %}
+
+    {% include "CTA1.njk" %}
+
+    {% include "farm-values.njk"%}
+
+    {% set gallery = [
+      {
+        image: "/assets/img/Smoky Mountain Acres/PigsEatingFromMama.JPG",
+        category: "pigs",
+        title: "Kune Kune Pigs",
+        description: "Our friendly pasture-raised Kune Kune pigs."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/PennyTheJuliana2.JPG",
+        category: "pigs",
+        title: "Juliana Pigs",
+        description: "Our very first juliana piglet named Penny."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/PigsandChickens.JPG",
+        category: "pigs",
+        title: "Pigs and Chickens",
+        description: "Our pasture-raised Kune Kune pigs get along great with the chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/barredRock1.JPG",
+        category: "chickens",
+        title: "Chickens",
+        description: "Our chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/FarmerJWithChickens.JPG",
+        category: "chickens",
+        title: "Chickens",
+        description: "Farmer J with the chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/FunnyChickenChase.JPG",
+        category: "chickens",
+        title: "Chicken Chase",
+        description: "We get a kick out of our chickens."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/FarmerJBetweenFences.JPG",
+        category: "farm-life",
+        title: "Working hard",
+        description: "At it again!"
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/KidsWalkingByTower.JPG",
+        category: "farm-life",
+        title: "Play Later",
+        description: "Disciplined farmers walking past their play fort do do their chores."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/RoughPasture.JPG",
+        category: "farm-life",
+        title: "How it Started",
+        description: "This is what the pasture used to look like."
+      },
+      {
+        image: "/assets/img/Smoky Mountain Acres/CosbyFieldAndMountainView.JPG",
+        category: "other",
+        title: "Nearby View from Cosby",
+        description: "A beautiful view on the drive in!"
+      }
+    ] %}
+    {% include "gallery-include.njk"%}
+
+
+
+  
+
