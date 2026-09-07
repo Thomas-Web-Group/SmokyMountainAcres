@@ -4,7 +4,7 @@ date: 2026-08-31
 description: "Buff Orpington chickens are calm, productive, and well suited to small farms and family homesteads."
 category: "Chickens"
 author: "Smoky Mountain Acres"
-image: "/assets/img/Smoky Mountain Acres/buffOrpington1.jpg"
+image: "/assets/img/Smoky Mountain Acres/buffOrpington1.webp"
 ---
 
 Buff Orpington chickens are one of the most popular backyard and homestead breeds, especially for families looking for a calm, dependable flock.

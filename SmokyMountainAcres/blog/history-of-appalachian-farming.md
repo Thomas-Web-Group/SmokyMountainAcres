@@ -4,7 +4,7 @@ date: 2026-09-03
 description: "Appalachian farming developed around small family farms, livestock, gardens, woodland resources, and the challenges of mountain terrain."
 category: "Appalachian History"
 author: "Smoky Mountain Acres"
-image: "/assets/img/Smoky Mountain Acres/CosbyFieldAndMountainView.JPG"
+image: "/assets/img/Smoky Mountain Acres/CosbyFieldAndMountainView.webp"
 ---
 
 Appalachian farming developed differently from agriculture in many flatter parts of the United States.

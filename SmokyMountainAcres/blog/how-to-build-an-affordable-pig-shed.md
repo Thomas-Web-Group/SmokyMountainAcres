@@ -4,7 +4,7 @@ date: 2026-09-04
 description: "A simple pig shelter can provide shade, rain protection, and wind protection without requiring an expensive barn."
 category: "Farm Projects"
 author: "Smoky Mountain Acres"
-image: "/assets/img/Smoky Mountain Acres/EmptyPigShed.JPG"
+image: "/assets/img/Smoky Mountain Acres/EmptyPigShed.webp"
 tags: ["posts", "pigs", "homesteading", "livestock"]
 ---
 Pigs do not necessarily need an expensive barn.

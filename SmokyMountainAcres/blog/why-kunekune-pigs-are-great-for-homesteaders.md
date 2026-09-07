@@ -4,7 +4,7 @@ date: 2026-08-30
 description: "Kunekune pigs are small, friendly, pasture-oriented pigs that can be a good fit for smaller homesteads."
 category: "Pigs"
 author: "Smoky Mountain Acres"
-image: "/assets/img/Smoky Mountain Acres/PigsAndChickens2.JPG"
+image: "/assets/img/Smoky Mountain Acres/PigsAndChickens2.webp"
 ---
 Kunekune pigs have become increasingly popular with small farms and homesteaders, and for good reason. Their smaller size, generally calm temperament, and ability to make use of pasture can make them easier to manage than many conventional pig breeds.
 
