@@ -1,42 +1,73 @@
 {% if page.url == "/contact/" %}
-
   {% include "contact-us.njk" %}
   {% include "faq.njk" %}
-
+{% elif page.url == "/faq/" %}
+  {% include "contact-us.njk" %}
 {% else %}
-
   {% include "faq.njk" %}
   {% include "contact-us.njk" %}
-
 {% endif %}
 
-  </main>
+</main>
 
 <footer id="footer" class="footer dark-background">
 
   {% include "CTA1.njk" %}
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">Smoky Mountain Acres</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Ask For Address</p>
-            <p>Cosby, TN 37722</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>423.248.2218</span></p>
-            <p><strong>Email:</strong> <span href="mailTo:smokymountainacres+fromFooterLink@gmail.com">SmokyMountainAcres@gmail.com</span></p>
-          </div>
+  <div class="container footer-top">
+    <div class="row gy-5">
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="/" class="footer-brand">Smoky Mountain Acres</a>
+        <p class="footer-tagline">A family farmstead in the Smoky Mountain foothills raising animals on pasture and sharing farm life with more transparency.</p>
+        <div class="footer-contact">
+          <p>Cosby, Tennessee 37722</p>
+          <p><a href="tel:+14232482218">423.248.2218</a></p>
+          <p><a href="mailto:SmokyMountainAcres+websitevisitor@gmail.com">SmokyMountainAcres@gmail.com</a></p>
         </div>
-    </div>
+        <div class="social-links d-flex mt-4">
+          <a href="https://www.facebook.com/profile.php?id=61593596327147" target="_blank" rel="noopener noreferrer" aria-label="Smoky Mountain Acres on Facebook">
+            <i class="bi bi-facebook" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Smoky Mountain Acres</strong> <span>All Rights Reserved</span></p>
-      <p>A <a target="_blank" href="https://www.thomaswebgroup.com">Thomas Web Group</a> website.</p>
-    </div>
+      <div class="col-lg-2 col-md-6 footer-links">
+        <h4>Our Farm</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i><a href="/About-Our-Farm/">About Our Farm</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/our-practices/">Our Practices</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/Our-Animals/">Our Animals</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/farm-tours/">Farm Tours</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
 
-  </footer>
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>From the Farm</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i><a href="/from-the-farm/eggs/">Farm-Fresh Eggs</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/from-the-farm/whole-hogs/">Whole &amp; Half Hogs</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/livestock/">Livestock</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/from-the-farm/availability/">Availability</a></li>
+          <li><i class="bi bi-chevron-right"></i><a href="/join-the-farm-list/">Join the Farm List</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Stay Connected</h4>
+        <p>Follow the seasons, animals, and availability from our family farm near Great Smoky Mountains National Park.</p>
+        <a class="footer-list-link" href="/join-the-farm-list/">Join the Farm List <i class="bi bi-arrow-right"></i></a>
+        <a class="footer-list-link" href="/contact/">Ask the Farm a Question <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p><span>Copyright</span> <strong class="px-1 sitename">Smoky Mountain Acres</strong> <span>All Rights Reserved</span></p>
+    <p class="credits">A <a target="_blank" rel="noopener" href="https://www.thomaswebgroup.com">Thomas Web Group</a> website.</p>
+  </div>
+
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

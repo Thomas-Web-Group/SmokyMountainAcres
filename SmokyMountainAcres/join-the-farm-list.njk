@@ -1,0 +1,39 @@
+---
+title: Join the Farm List
+layout: 'base.njk'
+description: "Join the Smoky Mountain Acres farm list for updates about eggs, whole hog reservations, livestock, pet milk herd shares, farm tours, and seasonal availability."
+permalink: /join-the-farm-list/
+---
+
+<section class="contact section paper-texture">
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-row">
+      <img class="text-decoration-left" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
+      <h1>Join the Farm List</h1>
+      <img class="text-decoration-right" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
+    </div>
+    <p>Get occasional updates when animals, eggs, farm products, or farm-tour dates become available.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 justify-content-center">
+      <div class="col-lg-5 content">
+        <h2>Stay Close to the Farm</h2>
+        <p>We are a small farm, so updates will be occasional and useful rather than constant. We may share whole-hog reservation windows, egg availability, livestock updates, pet milk herd-share news, and farm-tour openings.</p>
+        <p>Joining the list does not reserve an animal or guarantee a product. It simply helps us tell interested families when something is actually available.</p>
+      </div>
+      <div class="col-lg-7">
+        <form name="farm-list" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="php-email-form">
+          <input type="hidden" name="form-name" value="farm-list">
+          <div hidden><label>Do not fill this out: <input name="bot-field"></label></div>
+          <div class="row gy-4">
+            <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+            <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+            <div class="col-md-12"><select class="form-select" name="interest" required><option value="" selected disabled>What would you like updates about?</option><option value="Eggs">Eggs</option><option value="Whole hogs">Whole hogs</option><option value="Livestock">Livestock</option><option value="Pet milk herd share">Pet milk herd share</option><option value="Farm tours">Farm tours</option><option value="Everything">Everything</option></select></div>
+            <div class="col-md-12"><button type="submit">Join the Farm List</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

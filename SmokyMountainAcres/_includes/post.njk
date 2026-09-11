@@ -28,9 +28,17 @@ layout: 'base.njk'
 
               <article class="article">
 
-                <div class="post-img">
-                  <img src="{{ image }}" alt="" class="img-fluid">
-                </div>
+                {% if images %}
+                  <div class="post-img post-image-gallery">
+                    {% for postImage in images %}
+                      <img src="{{ postImage.src }}" alt="{{ postImage.alt }}" class="img-fluid">
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <div class="post-img">
+                    <img src="{{ image }}" alt="{{ title }}" class="img-fluid">
+                  </div>
+                {% endif %}
 
                 <h2 class="title">{{ title }}</h2>
 
