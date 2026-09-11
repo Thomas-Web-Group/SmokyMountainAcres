@@ -1,7 +1,7 @@
 {
   "name": "smokymountainacres",
   "version": "1.0.0",
-  "description": "Thanks for downloading this template!",
+  "description": "A family farm hidden in the Smoky Mountains",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
