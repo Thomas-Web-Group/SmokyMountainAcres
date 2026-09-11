@@ -5,6 +5,7 @@ description: "Australorp chickens are known for strong egg production, calm beha
 category: "Chickens"
 author: "Smoky Mountain Acres"
 image: "/assets/img/Smoky Mountain Acres/BabyChicks1.webp"
+images: [{src: "/assets/img/9.11.26/ChickensInPasture.webp", alt: "Chickens foraging in pasture"}, {src: "/assets/img/9.11.26/ChickensInPasture2.webp", alt: "A mixed flock walking through pasture"}, {src: "/assets/img/9.11.26/ChickensInPasture3.webp", alt: "Pasture-raised hens foraging together"}]
 ---
 
 Australorp chickens are a practical breed for homesteaders who want dependable egg production without sacrificing temperament.

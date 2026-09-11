@@ -5,6 +5,7 @@ description: "Learn the difference between cage-free, free-range, and pasture-ra
 category: "Chickens"
 author: "Smoky Mountain Acres"
 image: "/assets/img/Smoky Mountain Acres/BabyChicks1.webp"
+images: [{src: "/assets/img/9.11.26/ChickensInPasture.webp", alt: "Chickens foraging in pasture"}, {src: "/assets/img/9.11.26/ChickensInPasture2.webp", alt: "A flock walking through pasture"}, {src: "/assets/img/9.11.26/ChickensInPasture3.webp", alt: "Hens foraging together in grass"}]
 tags:
   - eggs
   - chickens

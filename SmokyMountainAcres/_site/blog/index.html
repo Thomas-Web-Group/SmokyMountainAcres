@@ -155,15 +155,15 @@
 
 
   <!-- Blog Posts Section -->
-  <section id="blog-posts" class="blog-posts section">
+  <section id="blog-posts" class="blog-posts section" data-blog-pagination data-page-size="6">
 
     <div class="container">
 
-      <div class="row gy-4">
+      <div class="row gy-4" data-blog-post-grid>
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -224,7 +224,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -285,7 +285,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -346,7 +346,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -407,7 +407,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -464,7 +464,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -521,7 +521,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -578,7 +578,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -639,14 +639,14 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
               <div class="post-img">
                 <a href="/blog/history-of-appalachian-farming/">
                   <img
-                    src="/assets/img/Smoky Mountain Acres/CosbyFieldAndMountainView.webp"
+                    src="/assets/img/Smoky Mountain Acres/HWYCosbyView2.webp"
                     alt="The History of Appalachian Farming"
                     class="img-fluid"
                   >
@@ -700,7 +700,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -761,7 +761,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -822,7 +822,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -883,7 +883,7 @@
 
         
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 blog-post-card">
 
             <article>
 
@@ -951,23 +951,15 @@
   </section>
   <!-- /Blog Posts Section -->
 
-  <!-- Blog Pagination Section 
-  <section id="blog-pagination" class="blog-pagination section">
+  <section id="blog-pagination" class="blog-pagination section" aria-label="Blog pagination">
     <div class="container">
+      <p class="blog-pagination-status" data-blog-pagination-status aria-live="polite"></p>
       <div class="d-flex justify-content-center">
-        <ul>
-          <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#" class="active">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li>...</li>
-          <li><a href="#">10</a></li>
-          <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
+        <ul data-blog-pagination-controls>
         </ul>
       </div>
     </div>
-  </section>-->
+  </section>
 
 </main>
   

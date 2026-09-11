@@ -124,6 +124,81 @@
   window.addEventListener("load", initSwiper);
 
   /**
+   * Paginate the blog listing without changing the generated post URLs.
+   */
+  function initBlogPagination() {
+    const paginationSection = document.querySelector('[data-blog-pagination]');
+    if (!paginationSection) return;
+
+    const cards = Array.from(paginationSection.querySelectorAll('.blog-post-card'));
+    const controls = document.querySelector('[data-blog-pagination-controls]');
+    const status = document.querySelector('[data-blog-pagination-status]');
+    const pageSize = Number(paginationSection.dataset.pageSize) || 6;
+    const pageCount = Math.max(1, Math.ceil(cards.length / pageSize));
+    const hashPage = Number(window.location.hash.replace('#blog-page-', ''));
+    let currentPage = Number.isInteger(hashPage) && hashPage > 0 ? hashPage : 1;
+
+    currentPage = Math.min(currentPage, pageCount);
+
+    function makeControl(label, page, icon, isActive = false) {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#blog-page-${page}`;
+      link.setAttribute('aria-label', label);
+
+      if (icon) {
+        link.innerHTML = `<i class="bi ${icon}" aria-hidden="true"></i>`;
+      } else {
+        link.textContent = page;
+      }
+
+      if (isActive) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        currentPage = page;
+        render();
+        history.replaceState(null, '', link.href);
+      });
+
+      item.appendChild(link);
+      return item;
+    }
+
+    function render() {
+      const firstCard = (currentPage - 1) * pageSize;
+      const lastCard = Math.min(firstCard + pageSize, cards.length);
+
+      cards.forEach((card, index) => {
+        card.hidden = index < firstCard || index >= lastCard;
+      });
+
+      controls.replaceChildren();
+      if (currentPage > 1) {
+        controls.appendChild(makeControl('Previous blog page', currentPage - 1, 'bi-chevron-left'));
+      }
+
+      for (let page = 1; page <= pageCount; page += 1) {
+        controls.appendChild(makeControl(`Blog page ${page}`, page, null, page === currentPage));
+      }
+
+      if (currentPage < pageCount) {
+        controls.appendChild(makeControl('Next blog page', currentPage + 1, 'bi-chevron-right'));
+      }
+
+      status.textContent = `Showing ${firstCard + 1}-${lastCard} of ${cards.length} blog posts`;
+      paginationSection.hidden = pageCount === 1;
+    }
+
+    render();
+  }
+
+  initBlogPagination();
+
+  /**
    * Initiate glightbox
    */
   const glightbox = GLightbox({

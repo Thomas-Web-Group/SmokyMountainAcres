@@ -5,6 +5,7 @@ description: "A simple pig shelter can provide shade, rain protection, and wind 
 category: "Farm Projects"
 author: "Smoky Mountain Acres"
 image: "/assets/img/Smoky Mountain Acres/EmptyPigShed.webp"
+images: [{src: "/assets/img/9.11.26/animalShelter1.webp", alt: "Starting the frame for an affordable pig shelter"}, {src: "/assets/img/9.11.26/animalShelter2.webp", alt: "Adding the first sections of the pig shelter frame"}, {src: "/assets/img/9.11.26/animalShelter3.webp", alt: "Building out the sides of the pig shelter"}, {src: "/assets/img/9.11.26/animalShelter4.webp", alt: "Continuing construction of the pig shelter"}, {src: "/assets/img/9.11.26/animalShelter5.webp", alt: "Installing more of the pig shelter structure"}, {src: "/assets/img/9.11.26/animalShelter6.webp", alt: "Adding the roof structure to the pig shelter"}, {src: "/assets/img/9.11.26/animalShelter7.webp", alt: "Finishing the shelter frame and roof"}, {src: "/assets/img/9.11.26/animalShelter8.webp", alt: "Completing the covered pig shelter"}, {src: "/assets/img/9.11.26/animalShelter9.webp", alt: "Checking the nearly finished pig shelter"}, {src: "/assets/img/9.11.26/animalShelter10.webp", alt: "The completed pig shelter ready for use"}, {src: "/assets/img/9.11.26/animalShelterFinished.webp", alt: "Finished affordable pig shelter in the pasture"}]
 tags: ["posts", "pigs", "homesteading", "livestock"]
 ---
 Pigs do not necessarily need an expensive barn.

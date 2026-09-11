@@ -5,6 +5,7 @@ date: 2026-09-08
 description: "Discover why a small Appalachian farm tour in Cosby, Tennessee, makes a meaningful family activity near Gatlinburg and the Great Smoky Mountains."
 tags: ["posts","farm-tour","smoky-mountains", "family-travel"]
 image: "/assets/img/Smoky Mountain Acres/farmerJWithChickens.webp"
+images: [{src: "/assets/img/9.11.26/kidPetting2CutePigs.webp", alt: "Child visiting pigs in the pasture"}, {src: "/assets/img/9.11.26/kidsPettingPigsKune.webp", alt: "Children petting Kune Kune pigs"}, {src: "/assets/img/9.11.26/YoungBoyWithPigsAndPigShelter.webp", alt: "Young farm helper near the pig shelter"}]
 
 ---
 

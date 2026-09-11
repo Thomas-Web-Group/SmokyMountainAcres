@@ -29,10 +29,8 @@ layout: 'base.njk'
               <article class="article">
 
                 {% if images %}
-                  <div class="post-img post-image-gallery">
-                    {% for postImage in images %}
-                      <img src="{{ postImage.src }}" alt="{{ postImage.alt }}" class="img-fluid">
-                    {% endfor %}
+                  <div class="post-img">
+                    <img src="{{ images[0].src }}" alt="{{ images[0].alt }}" class="img-fluid">
                   </div>
                 {% else %}
                   <div class="post-img">
@@ -52,9 +50,7 @@ layout: 'base.njk'
                 </div><!-- End meta top -->
 
                 <div class="content">
-                  <p>
-                    {{ content | safe }}
-                  </p>
+                  {{ content | interleavePostImages(images) | safe }}
 
                 </div><!-- End post content -->
 

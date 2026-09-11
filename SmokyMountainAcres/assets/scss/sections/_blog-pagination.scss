@@ -6,6 +6,12 @@
   padding-top: 0;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 
+  .blog-pagination-status {
+    margin: 0 0 14px;
+    text-align: center;
+    font-size: 14px;
+  }
+
   ul {
     display: flex;
     padding: 0;

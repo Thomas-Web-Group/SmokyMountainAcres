@@ -5,6 +5,7 @@ description: "Cosby, Tennessee has a long Appalachian history shaped by mountain
 category: "Appalachian History"
 author: "Smoky Mountain Acres"
 image: "/assets/img/Smoky Mountain Acres/HWYCosbyView1.webp"
+images: [{src: "/assets/img/Smoky Mountain Acres/HWYCosbyView2.webp", alt: "Mountain road near Cosby, Tennessee"}, {src: "/assets/img/Smoky Mountain Acres/HWYCosbyView3.webp", alt: "East Tennessee mountain landscape"}, {src: "/assets/img/Smoky Mountain Acres/AutumnOverlook.webp", alt: "Autumn mountain overlook near Smoky Mountain Acres"}]
 ---
 
 Cosby, Tennessee sits along the northeastern edge of the Great Smoky Mountains and has long been shaped by Appalachian mountain life.

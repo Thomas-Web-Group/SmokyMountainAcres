@@ -3,6 +3,7 @@ title: "Is That Really a Kunekune? How to Identify Common Mixes"
 date: 2026-09-08
 description: "Learn how to recognize Kunekune pigs and common crosses, compare pasture ability, temperament, size, and conformation, and avoid misleading livestock listings."
 image: "/assets/img/Smoky Mountain Acres/KuneKuneInPasture.webp"
+images: [{src: "/assets/img/9.11.26/DaddyKuneKuneMale.webp", alt: "Kune Kune boar in pasture"}, {src: "/assets/img/9.11.26/smallcutepigs.webp", alt: "Young Kune Kune pigs together"}, {src: "/assets/img/9.11.26/pigUpCloseFace6.webp", alt: "Kune Kune pig looking toward the camera"}]
 tags: ["posts", "pigs", "homesteading", "livestock"]
 ---
 

@@ -5,6 +5,7 @@ description: "Learn what pigs, chickens, and sheep eat on a pasture-based small 
 category: "Farm Life"
 author: "Smoky Mountain Acres"
 image: "/assets/img/Smoky Mountain Acres/AnimalsInFence.webp"
+images: [{src: "/assets/img/9.11.26/FeedingPigsFromThePigBin.webp", alt: "Feeding pigs at the pasture bin"}, {src: "/assets/img/9.11.26/kuneEatingBananaPeel.webp", alt: "Kune Kune pig eating a treat"}, {src: "/assets/img/9.11.26/ChickensInPasture.webp", alt: "Chickens foraging in pasture"}]
 tags:
   - farm life
   - livestock

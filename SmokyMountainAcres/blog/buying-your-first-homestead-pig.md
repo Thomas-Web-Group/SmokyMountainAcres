@@ -5,6 +5,7 @@ date: 2026-09-08
 description: "Before buying a homestead pig, learn the 15 questions to ask about breed, parentage, health, temperament, fencing, feed, and seller transparency."
 tags: ["posts", "pigs", "kunekune", "homesteading", "livestock"]
 image: "/assets/img/Smoky Mountain Acres/kidsWithPenny.webp"
+images: [{src: "/assets/img/9.11.26/smallcutepigWithFarmerJYoungBoy.webp", alt: "A young pig with a farmer and child"}, {src: "/assets/img/9.11.26/DaddyKuneKune.webp", alt: "Kune Kune pig standing in pasture"}, {src: "/assets/img/9.11.26/pigUpCloseFace6.webp", alt: "Curious Kune Kune pig at the fence"}]
 
 ---
 

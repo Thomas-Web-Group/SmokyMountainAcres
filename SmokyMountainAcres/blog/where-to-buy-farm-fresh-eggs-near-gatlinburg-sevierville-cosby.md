@@ -5,6 +5,7 @@ description: "Find farm-fresh eggs near Gatlinburg, Sevierville, and Cosby, Tenn
 category: "Chickens"
 author: "Smoky Mountain Acres"
 image: "/assets/img/Smoky Mountain Acres/BarredRockWithKid.webp"
+images: [{src: "/assets/img/9.11.26/ChickensInPasture.webp", alt: "Chickens foraging in pasture"}, {src: "/assets/img/9.11.26/ChickensInPasture2.webp", alt: "A flock walking through pasture"}, {src: "/assets/img/9.11.26/ChickensInPasture3.webp", alt: "Pasture-raised hens foraging together"}]
 tags:
   - eggs
   - chickens
