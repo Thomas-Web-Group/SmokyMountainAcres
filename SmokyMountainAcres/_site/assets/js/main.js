@@ -133,6 +133,7 @@
     const cards = Array.from(paginationSection.querySelectorAll('.blog-post-card'));
     const controls = document.querySelector('[data-blog-pagination-controls]');
     const status = document.querySelector('[data-blog-pagination-status]');
+    const paginationControlsSection = document.querySelector('#blog-pagination');
     const categoryButtons = Array.from(document.querySelectorAll('[data-blog-category]'));
     const pageSize = Number(paginationSection.dataset.pageSize) || 6;
     const hashPage = Number(window.location.hash.replace('#blog-page-', ''));
@@ -198,7 +199,7 @@
       }
 
       status.textContent = `Showing ${filteredCards.length ? firstCard + 1 : 0}-${lastCard} of ${filteredCards.length} blog posts`;
-      paginationSection.hidden = pageCount === 1;
+      paginationControlsSection.hidden = pageCount === 1;
     }
 
     categoryButtons.forEach((button) => {
