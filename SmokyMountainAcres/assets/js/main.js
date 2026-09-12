@@ -133,12 +133,17 @@
     const cards = Array.from(paginationSection.querySelectorAll('.blog-post-card'));
     const controls = document.querySelector('[data-blog-pagination-controls]');
     const status = document.querySelector('[data-blog-pagination-status]');
+    const categoryButtons = Array.from(document.querySelectorAll('[data-blog-category]'));
     const pageSize = Number(paginationSection.dataset.pageSize) || 6;
-    const pageCount = Math.max(1, Math.ceil(cards.length / pageSize));
     const hashPage = Number(window.location.hash.replace('#blog-page-', ''));
     let currentPage = Number.isInteger(hashPage) && hashPage > 0 ? hashPage : 1;
+    let activeCategory = 'all';
 
-    currentPage = Math.min(currentPage, pageCount);
+    function getFilteredCards() {
+      return activeCategory === 'all'
+        ? cards
+        : cards.filter((card) => card.dataset.blogCategoryValue === activeCategory);
+    }
 
     function makeControl(label, page, icon, isActive = false) {
       const item = document.createElement('li');
@@ -169,11 +174,14 @@
     }
 
     function render() {
+      const filteredCards = getFilteredCards();
+      const pageCount = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+      currentPage = Math.min(currentPage, pageCount);
       const firstCard = (currentPage - 1) * pageSize;
-      const lastCard = Math.min(firstCard + pageSize, cards.length);
+      const lastCard = Math.min(firstCard + pageSize, filteredCards.length);
 
-      cards.forEach((card, index) => {
-        card.hidden = index < firstCard || index >= lastCard;
+      cards.forEach((card) => {
+        card.hidden = !filteredCards.slice(firstCard, lastCard).includes(card);
       });
 
       controls.replaceChildren();
@@ -189,9 +197,20 @@
         controls.appendChild(makeControl('Next blog page', currentPage + 1, 'bi-chevron-right'));
       }
 
-      status.textContent = `Showing ${firstCard + 1}-${lastCard} of ${cards.length} blog posts`;
+      status.textContent = `Showing ${filteredCards.length ? firstCard + 1 : 0}-${lastCard} of ${filteredCards.length} blog posts`;
       paginationSection.hidden = pageCount === 1;
     }
+
+    categoryButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeCategory = button.dataset.blogCategory;
+        currentPage = 1;
+        categoryButtons.forEach((categoryButton) => {
+          categoryButton.classList.toggle('active', categoryButton === button);
+        });
+        render();
+      });
+    });
 
     render();
   }

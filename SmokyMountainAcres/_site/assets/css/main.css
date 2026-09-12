@@ -2107,6 +2107,30 @@ section,
 /*--------------------------------------------------------------
 # Blog Posts Section
 --------------------------------------------------------------*/
+.blog-posts .blog-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.blog-posts .blog-categories button {
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 45%);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--heading-color);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.blog-posts .blog-categories button:hover,
+.blog-posts .blog-categories button.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 .blog-posts article {
   background-color: var(--surface-color);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);

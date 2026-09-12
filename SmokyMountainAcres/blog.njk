@@ -27,11 +27,22 @@ permalink: /blog/
 
     <div class="container">
 
+      <nav class="blog-categories" aria-label="Filter blog categories" data-blog-categories>
+        <button type="button" class="active" data-blog-category="all">All posts</button>
+        {% set categories = [] %}
+        {% for post in collections.posts %}
+          {% if post.data.category and post.data.category not in categories %}
+            {% set categories = categories.concat([post.data.category]) %}
+            <button type="button" data-blog-category="{{ post.data.category | lower }}">{{ post.data.category }}</button>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
       <div class="row gy-4" data-blog-post-grid>
 
         {% for post in collections.posts | reverse %}
 
-          <div class="col-lg-4 blog-post-card">
+          <div class="col-lg-4 blog-post-card" data-blog-category-value="{{ post.data.category | default('uncategorized') | lower }}">
 
             <article>
 
