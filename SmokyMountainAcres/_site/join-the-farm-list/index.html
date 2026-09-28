@@ -154,7 +154,7 @@
         <p>Joining the list does not reserve an animal or guarantee a product. It simply helps us tell interested families when something is actually available.</p>
       </div>
       <div class="col-lg-7">
-        <form name="farm-list" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="php-email-form">
+        <form name="farm-list" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="php-email-form">
           <input type="hidden" name="form-name" value="farm-list">
           <div hidden><label>Do not fill this out: <input name="bot-field"></label></div>
           <div class="row gy-4">
@@ -386,6 +386,7 @@
             <form
               name="contact"
               method="POST"
+              action="/"
               data-netlify="true"
               class="php-email-form"
               data-aos="fade-up"
