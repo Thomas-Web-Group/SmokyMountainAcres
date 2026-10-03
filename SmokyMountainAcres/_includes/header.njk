@@ -45,33 +45,28 @@
               <li><a href="/from-the-farm/eggs/" class="{% if page.url == '/from-the-farm/eggs/' %}active{% endif %}">Eggs</a></li>
               <li><a href="/from-the-farm/whole-hogs/" class="{% if page.url == '/from-the-farm/whole-hogs/' %}active{% endif %}">Whole &amp; Half Hogs</a></li>
               <li><a href="/livestock/" class="{% if page.url == '/livestock/' %}active{% endif %}">Livestock</a></li>
-              <li><a href="/from-the-farm/livestock-inventory/" class="{% if page.url == '/from-the-farm/livestock-inventory/' %}active{% endif %}">Livestock Catalogue</a></li>
+              <li><a href="/from-the-farm/livestock-inventory/" class="{% if page.url == '/from-the-farm/livestock-inventory/' %}active{% endif %}">Inventory</a></li>
               <li><a href="/from-the-farm/availability/" class="{% if page.url == '/from-the-farm/availability/' %}active{% endif %}">Availability</a></li>
             </ul>
           </li>
 
           <li>
-            <a href="/gallery/" class="{% if page.url == '/gallery/' %}active{% endif %}">
-              Gallery
+            <a href="/from-the-farm/livestock-inventory/" class="{% if page.url == '/from-the-farm/livestock-inventory/' %}active{% endif %}">
+              Inventory
             </a>
           </li>
 
-          <li>
-            <a href="/farm-tours/" class="{% if page.url == '/farm-tours/' %}active{% endif %}">
-              Farm Tours
+          <li class="dropdown">
+            <a href="/gallery/" class="{% if page.url == '/gallery/' or page.url == '/farm-tours/' or page.url == '/blog/' or page.url == '/faq/' %}active{% endif %}">
+              <span>Explore</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
             </a>
-          </li>
-
-          <li>
-            <a href="/blog/" class="{% if page.url == '/blog/' %}active{% endif %}">
-              Farm Blog
-            </a>
-          </li>
-
-          <li>
-            <a href="/faq/" class="{% if page.url == '/faq/' %}active{% endif %}">
-              FAQ
-            </a>
+            <ul>
+              <li><a href="/gallery/" class="{% if page.url == '/gallery/' %}active{% endif %}">Gallery</a></li>
+              <li><a href="/farm-tours/" class="{% if page.url == '/farm-tours/' %}active{% endif %}">Farm Tours</a></li>
+              <li><a href="/blog/" class="{% if page.url == '/blog/' %}active{% endif %}">Farm Blog</a></li>
+              <li><a href="/faq/" class="{% if page.url == '/faq/' %}active{% endif %}">FAQ</a></li>
+            </ul>
           </li>
 
           <li>
