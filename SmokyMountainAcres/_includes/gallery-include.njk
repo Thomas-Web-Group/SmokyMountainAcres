@@ -13,6 +13,7 @@
 
     <div
       class="isotope-layout"
+      {% if page.url == '/gallery/' %}data-gallery-infinite-scroll data-gallery-feed="/gallery/" data-gallery-batch-size="16"{% endif %}
       data-default-filter="*"
       data-layout="masonry"
       data-sort="original-order"
@@ -32,11 +33,13 @@
 
       <div
         class="row gy-4 isotope-container"
+        id="gallery-grid"
         data-aos="fade-up"
         data-aos-delay="200"
       >
 
         {% for photo in gallery %}
+          {% if page.url != '/gallery/' or loop.index <= 16 %}
 
           <div
             class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ photo.category }}"
@@ -46,6 +49,7 @@
               src="{{ photo.image }}"
               class="img-fluid"
               alt="{{ photo.alt }}"
+              loading="lazy"
             >
 
             <div class="portfolio-info">
@@ -67,9 +71,20 @@
 
           </div><!-- End Portfolio Item -->
 
+          {% endif %}
+
         {% endfor %}
 
       </div><!-- End Portfolio Container -->
+
+      {% if page.url == '/gallery/' %}
+        <div class="text-center mt-4" data-gallery-loader>
+          <p class="visually-hidden" data-gallery-status aria-live="polite"></p>
+          <div class="py-1" data-gallery-sentinel aria-hidden="true"></div>
+          <button type="button" class="btn btn-outline-secondary" data-gallery-load-more aria-controls="gallery-grid">Load More Photos</button>
+        </div>
+        <script type="application/json" data-gallery-items>{{ gallery | dump | safe }}</script>
+      {% endif %}
 
     </div>
 

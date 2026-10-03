@@ -1,0 +1,38 @@
+---
+title: Livestock Catalogue
+layout: 'base.njk'
+description: Browse the livestock currently listed by Smoky Mountain Acres. Contact the farm to confirm availability, pricing, and pickup details.
+permalink: /from-the-farm/livestock-inventory/
+---
+
+<section class="team section paper-texture">
+  <div class="container section-title pb-3" data-aos="fade-up">
+    <div class="section-title-row">
+      <img class="text-decoration-left" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
+      <h1 class="h2 mb-0">Livestock Catalogue</h1>
+      <img class="text-decoration-right" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
+    </div>
+    <p>Browse the piglets currently listed by our farm. Availability can change, so contact us to confirm details.</p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+      {% for animal in livestock %}
+        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ (loop.index0 % 4) * 50 }}">
+          <article class="team h-100">
+            <div class="pic">
+              <img src="{{ animal.image }}" alt="{{ animal.name }}, a {{ animal.gender | lower }} piglet at Smoky Mountain Acres" class="img-fluid" loading="lazy">
+            </div>
+            <h3>{{ animal.name }}</h3>
+            <p>Gender: {{ animal.gender }}<br>Approx. DOB: {{ animal.approxDob }}</p>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="container text-center mt-5" data-aos="fade-up">
+    <p>Ask us about current availability, pricing, and pickup arrangements.</p>
+    <a href="/contact/" class="cta-btn">Contact the Farm</a>
+  </div>
+</section>

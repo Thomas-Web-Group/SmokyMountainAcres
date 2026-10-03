@@ -46,6 +46,63 @@ layout: 'base.njk'
     {% include "what-we-offer.njk" %}
     {% include "our-animals.njk" %}
 
+    <section id="livestock" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-title-row">
+          <img class="text-decoration-left" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
+          <h2>OUR LIVESTOCK</h2>
+          <img class="text-decoration-right" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
+        </div>
+        <p>Meet the boys and girls featured in our farm inventory.</p>
+      </div>
+
+      <div class="site-section slider-team-wrap">
+        <div class="container">
+          <div class="slider-nav d-flex justify-content-end mb-3">
+            <a href="#" class="js-prev livestock-prev" role="button" aria-label="Previous livestock" aria-controls="livestock-swiper-wrapper"><i class="bi bi-arrow-left-short"></i></a>
+            <a href="#" class="js-next livestock-next" role="button" aria-label="Next livestock" aria-controls="livestock-swiper-wrapper"><i class="bi bi-arrow-right-short"></i></a>
+          </div>
+
+          <div class="swiper init-swiper pb-5" data-aos="fade-up" data-aos-delay="100">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "slidesPerView": 1,
+                "spaceBetween": 24,
+                "pagination": {
+                  "el": ".livestock-pagination",
+                  "clickable": true
+                },
+                "navigation": {
+                  "nextEl": ".livestock-next",
+                  "prevEl": ".livestock-prev"
+                },
+                "breakpoints": {
+                  "640": { "slidesPerView": 2, "spaceBetween": 30 },
+                  "1200": { "slidesPerView": 3, "spaceBetween": 30 }
+                }
+              }
+            </script>
+            <div class="swiper-wrapper" id="livestock-swiper-wrapper">
+              {% for animal in livestock %}
+                <div class="swiper-slide">
+                  <div class="team">
+                    <div class="pic">
+                      <img src="{{ animal.image }}" alt="{{ animal.name }} ({{ animal.gender }}) from the Smoky Mountain Acres livestock inventory" class="img-fluid">
+                    </div>
+                    <h3>{{ animal.name }}</h3>
+                    <p>Gender: {{ animal.gender }}<br>Approx. DOB: {{ animal.approxDob }}</p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-pagination livestock-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {% include "CTA1.njk" %}
 
     {% include "farm-values.njk"%}

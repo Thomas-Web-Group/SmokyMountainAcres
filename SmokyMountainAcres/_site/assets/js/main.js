@@ -234,13 +234,15 @@
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+    imagesLoaded(isotopeContainer, function() {
+      initIsotope = new Isotope(isotopeContainer, {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
         sortBy: sort
       });
+      isotopeContainer.isotopeInstance = initIsotope;
     });
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
@@ -257,6 +259,155 @@
     });
 
   });
+
+  /**
+   * Load additional gallery photos as visitors approach the end of the list.
+   */
+  function initGalleryInfiniteScroll() {
+    const gallery = document.querySelector('[data-gallery-infinite-scroll]');
+    if (!gallery) return;
+
+    const container = gallery.querySelector('.isotope-container');
+    const sentinel = gallery.querySelector('[data-gallery-sentinel]');
+    const loadButton = gallery.querySelector('[data-gallery-load-more]');
+    const status = gallery.querySelector('[data-gallery-status]');
+    const feedUrl = gallery.dataset.galleryFeed;
+    const batchSize = Number(gallery.dataset.galleryBatchSize) || 16;
+    let photos = null;
+    let nextIndex = container.querySelectorAll('.isotope-item').length;
+    let isLoading = false;
+    let autoLoadPaused = false;
+    let userScrollIntent = false;
+    let previousScrollY = window.scrollY;
+    let scrollIntentTimeout;
+
+    function createGalleryItem(photo) {
+      const item = document.createElement('div');
+      item.className = `col-lg-4 col-md-6 portfolio-item isotope-item filter-${photo.category}`;
+
+      const image = document.createElement('img');
+      image.src = photo.image;
+      image.className = 'img-fluid';
+      image.alt = photo.alt || photo.title || 'Farm gallery photo';
+      image.loading = 'lazy';
+      item.appendChild(image);
+
+      const info = document.createElement('div');
+      info.className = 'portfolio-info';
+
+      const title = document.createElement('h4');
+      title.textContent = photo.title || '';
+      info.appendChild(title);
+
+      const description = document.createElement('p');
+      description.textContent = photo.description || '';
+      info.appendChild(description);
+
+      const preview = document.createElement('a');
+      preview.href = photo.image;
+      preview.title = photo.title || photo.alt || 'Farm gallery photo';
+      preview.dataset.gallery = `portfolio-gallery-${photo.category}`;
+      preview.className = 'glightbox preview-link';
+
+      const icon = document.createElement('i');
+      icon.className = 'bi bi-zoom-in';
+      icon.setAttribute('aria-hidden', 'true');
+      preview.appendChild(icon);
+      info.appendChild(preview);
+      item.appendChild(info);
+
+      return item;
+    }
+
+    async function loadNextBatch() {
+      if (isLoading || (photos && nextIndex >= photos.length)) return;
+
+      isLoading = true;
+      loadButton.disabled = true;
+      status.textContent = 'Loading more photos.';
+
+      try {
+        if (!photos) {
+          const response = await fetch(feedUrl, { headers: { Accept: 'text/html' } });
+          if (!response.ok) throw new Error(`Gallery request failed: ${response.status}`);
+
+          const pageMarkup = await response.text();
+          const feedDocument = new DOMParser().parseFromString(pageMarkup, 'text/html');
+          const dataElement = feedDocument.querySelector('[data-gallery-items]');
+          if (!dataElement) throw new Error('Gallery data was not found in the response.');
+          photos = JSON.parse(dataElement.textContent);
+        }
+
+        const batch = photos.slice(nextIndex, nextIndex + batchSize);
+        if (!batch.length) {
+          loadButton.hidden = true;
+          sentinel.hidden = true;
+          return;
+        }
+
+        const newItems = batch.map(createGalleryItem);
+        container.append(...newItems);
+        nextIndex += batch.length;
+
+        if (container.isotopeInstance) {
+          container.isotopeInstance.appended(newItems);
+          imagesLoaded(newItems, () => container.isotopeInstance.layout());
+        }
+
+        if (typeof glightbox.reload === 'function') {
+          glightbox.reload();
+        }
+        status.textContent = `Loaded ${nextIndex} of ${photos.length} photos.`;
+        autoLoadPaused = false;
+
+        if (nextIndex >= photos.length) {
+          loadButton.hidden = true;
+          sentinel.hidden = true;
+        }
+      } catch (error) {
+        autoLoadPaused = true;
+        status.textContent = 'Could not load more photos. Use the button to try again.';
+      } finally {
+        isLoading = false;
+        loadButton.disabled = false;
+      }
+    }
+
+    function noteUserScroll(event) {
+      if (event.type === 'wheel' && event.deltaY <= 0) return;
+
+      userScrollIntent = true;
+      window.clearTimeout(scrollIntentTimeout);
+      scrollIntentTimeout = window.setTimeout(() => {
+        userScrollIntent = false;
+      }, 300);
+    }
+
+    function checkAutoLoad() {
+      const currentScrollY = window.scrollY;
+      const movedDown = currentScrollY > previousScrollY;
+      previousScrollY = currentScrollY;
+      const nearListEnd = sentinel.getBoundingClientRect().top <= window.innerHeight + 600;
+
+      if (userScrollIntent && movedDown && !autoLoadPaused && nearListEnd) {
+        userScrollIntent = false;
+        window.clearTimeout(scrollIntentTimeout);
+        loadNextBatch();
+      }
+    }
+
+    loadButton.addEventListener('click', loadNextBatch);
+    window.addEventListener('wheel', noteUserScroll, { passive: true });
+    window.addEventListener('touchmove', noteUserScroll, { passive: true });
+    window.addEventListener('keydown', (event) => {
+      if (['ArrowDown', 'PageDown', ' ', 'End'].includes(event.key)) {
+        noteUserScroll(event);
+      }
+    });
+    window.addEventListener('scroll', checkAutoLoad, { passive: true });
+  }
+
+  initGalleryInfiniteScroll();
 
   /**
    * Frequently Asked Questions Toggle
