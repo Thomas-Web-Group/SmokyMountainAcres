@@ -8,5 +8,6 @@
   "sold": false,
   "pending": false,
   "featured": false,
-  "order": 3
+  "order": 3,
+  "price": "$100"
 }

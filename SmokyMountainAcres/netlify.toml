@@ -1,3 +1,13 @@
 [build]
   command = "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\" && npm run build"
   publish = "_site"
+
+[[redirects]]
+  from = "/from-the-farm/livestock-inventory/*"
+  to = "/sale-barn/"
+  status = 301
+
+[[redirects]]
+  from = "/from-the-farm/livestock-inventory"
+  to = "/sale-barn/"
+  status = 301

@@ -5,6 +5,7 @@
   "featured": false,
   "birth_date": "Aug 1, 2026",
   "order": 10,
+  "price": "$125",
   "sold": false,
   "pending": true,
   "image": "/assets/img/inventory/girls/Sally.webp",
