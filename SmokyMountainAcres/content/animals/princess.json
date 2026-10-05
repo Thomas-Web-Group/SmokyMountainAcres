@@ -1,12 +1,12 @@
 {
-  "name": "Princess",
-  "animal_type": "Pig",
   "sex": "Girl",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/girls/DSC01162.webp",
   "available": true,
-  "sold": false,
-  "pending": false,
+  "name": "Princess",
   "featured": false,
-  "order": 12
+  "birth_date": "Aug 1, 2026",
+  "order": 12,
+  "sold": false,
+  "pending": true,
+  "image": "/assets/img/inventory/girls/DSC01162.webp",
+  "animal_type": "Pig"
 }
