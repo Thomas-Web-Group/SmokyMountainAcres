@@ -1,7 +1,7 @@
 ---
-title: Livestock Catalogue
+title: Sale Barn
 layout: 'base.njk'
-description: Browse the livestock currently listed by Smoky Mountain Acres. Contact the farm to confirm availability, pricing, and pickup details.
+description: Browse the Sale Barn, the livestock currently listed by Smoky Mountain Acres. Contact the farm to confirm availability, pricing, and pickup details.
 permalink: /from-the-farm/livestock-inventory/
 ---
 
@@ -9,7 +9,7 @@ permalink: /from-the-farm/livestock-inventory/
   <div class="container section-title pb-3" data-aos="fade-up">
     <div class="section-title-row">
       <img class="text-decoration-left" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
-      <h1 class="h2 mb-0">Livestock Catalogue</h1>
+      <h1 class="h2 mb-0">Sale Barn</h1>
       <img class="text-decoration-right" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
     </div>
     <p>Browse the piglets currently listed by our farm. Availability can change, so contact us to confirm details.</p>
@@ -23,6 +23,7 @@ permalink: /from-the-farm/livestock-inventory/
             {% if animal.image %}
             <div class="pic">
               <img src="{{ animal.image }}" alt="{{ animal.name }}{% if animal.sex or animal.animal_type %}, a {{ animal.sex | lower }} {{ animal.animal_type | lower }}{% endif %} at Smoky Mountain Acres" class="img-fluid" loading="lazy" onerror="this.closest('.pic').hidden=true">
+              {% if animal.sold %}<span class="status-stamp status-stamp-sold">SOLD</span>{% elif animal.pending %}<span class="status-stamp status-stamp-pending">PENDING</span>{% endif %}
             </div>
             {% endif %}
             <h3>{{ animal.name }}</h3>

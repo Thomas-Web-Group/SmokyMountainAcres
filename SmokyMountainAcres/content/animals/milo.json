@@ -5,6 +5,8 @@
   "birth_date": "Aug 1, 2026",
   "image": "/assets/img/inventory/boys/DSC01157.webp",
   "available": true,
+  "sold": false,
+  "pending": false,
   "featured": false,
   "order": 3
 }

@@ -1812,6 +1812,41 @@ section,
   border-radius: 4px;
 }
 
+/* SOLD / PENDING stamp over the animal photo */
+.team .team .pic {
+  position: relative;
+  container-type: inline-size;
+}
+
+.status-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  font-family: Impact, "Arial Black", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  font-size: 36cqw;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  -webkit-text-stroke: 0.05em #fff;
+  paint-order: stroke fill;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.55), 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  opacity: 0.92;
+}
+
+.status-stamp-sold {
+  color: #d10000;
+}
+
+.status-stamp-pending {
+  color: #d96a00;
+  font-size: 22cqw;
+}
+
 .team .team .position {
   display: block;
   margin-bottom: 20px;

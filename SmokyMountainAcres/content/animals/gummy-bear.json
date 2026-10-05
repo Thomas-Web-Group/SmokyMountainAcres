@@ -5,6 +5,8 @@
   "birth_date": "June 1, 2026",
   "image": "/assets/img/inventory/boys/GummyBear.webp",
   "available": true,
+  "sold": false,
+  "pending": false,
   "featured": false,
   "order": 7
 }

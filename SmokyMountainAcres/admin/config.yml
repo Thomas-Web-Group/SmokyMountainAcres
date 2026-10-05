@@ -84,9 +84,23 @@ collections:
 
       - {
           name: available,
-          label: "Available (shown on the Inventory page)",
+          label: "Available (shown in the Sale Barn)",
           widget: boolean,
           default: true
+        }
+
+      - {
+          name: sold,
+          label: "Sold",
+          widget: boolean,
+          default: false
+        }
+
+      - {
+          name: pending,
+          label: "Pending",
+          widget: boolean,
+          default: false
         }
 
       - {

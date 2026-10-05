@@ -5,6 +5,8 @@
   "birth_date": "Aug 1, 2026",
   "image": "/assets/img/inventory/girls/DSC01161.webp",
   "available": true,
+  "sold": false,
+  "pending": false,
   "featured": false,
   "order": 11
 }
