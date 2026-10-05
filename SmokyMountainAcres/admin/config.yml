@@ -1,10 +1,7 @@
 backend:
-  name: github
-  repo: Thomas-Web-Group/SmokyMountainAcres
+  name: turbo-github
+  turbo_site_id: 9def7680-3961-43b2-bb03-6bc78e2f61c6
   branch: main
-  # Netlify's OAuth provider handles GitHub login (no secrets in this repo).
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 # Uncomment for local testing with `npx decap-server` (see README).
 # local_backend: true
