@@ -6,14 +6,14 @@ backend:
 # Uncomment for local testing with `npx decap-server` (see README).
 # local_backend: true
 
-media_folder: "assets/img/inventory"
+media_folder: "SmokyMountainAcres/assets/img/inventory"
 public_folder: "/assets/img/inventory"
 
 collections:
   - name: animals
     label: "Animals"
     label_singular: "Animal"
-    folder: "content/animals"
+    folder: "SmokyMountainAcres/content/animals"
     extension: "json"
     format: "json"
     create: true
@@ -22,15 +22,84 @@ collections:
     slug: "{{name}}"
     summary: "{{name}} - {{animal_type}} ({{sex}})"
     sortable_fields: ["name", "order"]
+
     fields:
       - { name: name, label: "Name", widget: string }
-      - { name: animal_type, label: "Animal Type", widget: select, options: ["Pig", "Chicken", "Sheep", "Other"], default: "Pig" }
-      - { name: breed, label: "Breed", widget: string, required: false }
-      - { name: sex, label: "Sex", widget: select, options: ["Boy", "Girl"], required: false }
-      - { name: birth_date, label: "Approx. Birth Date", widget: datetime, date_format: "MMM D, YYYY", time_format: false, format: "MMM D, YYYY", picker_utc: true, required: false }
-      - { name: price, label: "Price", widget: string, required: false, hint: "Shown as typed, for example $250" }
-      - { name: description, label: "Short Description", widget: text, required: false }
-      - { name: image, label: "Photo", widget: image, required: false }
-      - { name: available, label: "Available (shown on the Inventory page)", widget: boolean, default: true }
-      - { name: featured, label: "Featured (listed first)", widget: boolean, default: false }
-      - { name: order, label: "Display Order (lower numbers first)", widget: number, value_type: int, required: false }
+
+      - {
+          name: animal_type,
+          label: "Animal Type",
+          widget: select,
+          options: ["Pig", "Chicken", "Sheep", "Other"],
+          default: "Pig"
+        }
+
+      - {
+          name: breed,
+          label: "Breed",
+          widget: string,
+          required: false
+        }
+
+      - {
+          name: sex,
+          label: "Sex",
+          widget: select,
+          options: ["Boy", "Girl"],
+          required: false
+        }
+
+      - {
+          name: birth_date,
+          label: "Approx. Birth Date",
+          widget: datetime,
+          date_format: "MMM D, YYYY",
+          time_format: false,
+          format: "MMM D, YYYY",
+          picker_utc: true,
+          required: false
+        }
+
+      - {
+          name: price,
+          label: "Price",
+          widget: string,
+          required: false,
+          hint: "Shown as typed, for example $250"
+        }
+
+      - {
+          name: description,
+          label: "Short Description",
+          widget: text,
+          required: false
+        }
+
+      - {
+          name: image,
+          label: "Photo",
+          widget: image,
+          required: false
+        }
+
+      - {
+          name: available,
+          label: "Available (shown on the Inventory page)",
+          widget: boolean,
+          default: true
+        }
+
+      - {
+          name: featured,
+          label: "Featured (listed first)",
+          widget: boolean,
+          default: false
+        }
+
+      - {
+          name: order,
+          label: "Display Order (lower numbers first)",
+          widget: number,
+          value_type: int,
+          required: false
+        }
