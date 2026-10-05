@@ -68,6 +68,11 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 
+/* Keeps aspect ratio for images carrying width/height attributes when CSS sets only a width. */
+:where(img[height]) {
+  height: auto;
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -265,6 +270,7 @@ input[type="submit"] {
 
 .header .logo img {
   max-height: 60px;
+  width: auto;
   margin-right: 8px;
 }
 

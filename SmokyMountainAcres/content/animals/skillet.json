@@ -1,0 +1,10 @@
+{
+  "name": "Skillet",
+  "animal_type": "Pig",
+  "sex": "Boy",
+  "birth_date": "Aug 1, 2026",
+  "image": "/assets/img/inventory/boys/Skillet.webp",
+  "available": true,
+  "featured": false,
+  "order": 8
+}

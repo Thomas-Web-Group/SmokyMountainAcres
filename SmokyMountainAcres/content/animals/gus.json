@@ -1,0 +1,10 @@
+{
+  "name": "Gus",
+  "animal_type": "Pig",
+  "sex": "Boy",
+  "birth_date": "Aug 1, 2026",
+  "image": "/assets/img/inventory/boys/DSC01156.webp",
+  "available": true,
+  "featured": false,
+  "order": 2
+}

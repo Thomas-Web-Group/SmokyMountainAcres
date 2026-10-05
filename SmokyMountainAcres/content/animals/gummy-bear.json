@@ -1,0 +1,10 @@
+{
+  "name": "Gummy Bear",
+  "animal_type": "Pig",
+  "sex": "Boy",
+  "birth_date": "June 1, 2026",
+  "image": "/assets/img/inventory/boys/GummyBear.webp",
+  "available": true,
+  "featured": false,
+  "order": 7
+}

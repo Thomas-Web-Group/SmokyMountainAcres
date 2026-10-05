@@ -1,0 +1,10 @@
+{
+  "name": "Custard",
+  "animal_type": "Pig",
+  "sex": "Girl",
+  "birth_date": "Aug 1, 2026",
+  "image": "/assets/img/inventory/girls/Custard.webp",
+  "available": true,
+  "featured": false,
+  "order": 9
+}

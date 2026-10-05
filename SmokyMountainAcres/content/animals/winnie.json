@@ -1,0 +1,10 @@
+{
+  "name": "Winnie",
+  "animal_type": "Pig",
+  "sex": "Girl",
+  "birth_date": "Aug 1, 2026",
+  "image": "/assets/img/inventory/girls/DSC01164.webp",
+  "available": true,
+  "featured": false,
+  "order": 14
+}

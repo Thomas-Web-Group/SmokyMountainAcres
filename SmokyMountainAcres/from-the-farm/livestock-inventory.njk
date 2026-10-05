@@ -20,11 +20,19 @@ permalink: /from-the-farm/livestock-inventory/
       {% for animal in livestock %}
         <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ (loop.index0 % 4) * 50 }}">
           <article class="team h-100">
+            {% if animal.image %}
             <div class="pic">
-              <img src="{{ animal.image }}" alt="{{ animal.name }}, a {{ animal.gender | lower }} piglet at Smoky Mountain Acres" class="img-fluid" loading="lazy">
+              <img src="{{ animal.image }}" alt="{{ animal.name }}{% if animal.sex or animal.animal_type %}, a {{ animal.sex | lower }} {{ animal.animal_type | lower }}{% endif %} at Smoky Mountain Acres" class="img-fluid" loading="lazy" onerror="this.closest('.pic').hidden=true">
             </div>
+            {% endif %}
             <h3>{{ animal.name }}</h3>
-            <p>Gender: {{ animal.gender }}<br>Approx. DOB: {{ animal.approxDob }}</p>
+            <p>
+              {% if animal.breed %}{{ animal.breed }}<br>{% endif %}
+              {% if animal.sex %}Gender: {{ animal.sex }}<br>{% endif %}
+              {% if animal.birth_date %}Approx. DOB: {{ animal.birth_date }}<br>{% endif %}
+              {% if animal.price %}Price: {{ animal.price }}<br>{% endif %}
+              {% if animal.description %}{{ animal.description }}{% endif %}
+            </p>
           </article>
         </div>
       {% endfor %}

@@ -9,7 +9,19 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps?q=Cosby%2C+TN&z=10&output=embed" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe id="farm-map" title="Map of Smoky Mountain Acres in Cosby, TN" style="border:0; width: 100%; height: 270px;" data-src="https://www.google.com/maps?q=Cosby%2C+TN&z=10&output=embed" frameborder="0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <noscript><a href="https://www.google.com/maps?q=Cosby%2C+TN" rel="noopener">View map</a></noscript>
+          <script>
+            (function () {
+              var map = document.getElementById('farm-map');
+              function loadMap() { map.src = map.dataset.src; }
+              if (!('IntersectionObserver' in window)) { loadMap(); return; }
+              var observer = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) { loadMap(); observer.disconnect(); }
+              }, { rootMargin: '200px' });
+              observer.observe(map);
+            })();
+          </script>
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">

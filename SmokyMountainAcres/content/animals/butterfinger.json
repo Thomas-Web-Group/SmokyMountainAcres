@@ -1,0 +1,10 @@
+{
+  "name": "Butterfinger",
+  "animal_type": "Pig",
+  "sex": "Boy",
+  "birth_date": "Feb 1, 2026",
+  "image": "/assets/img/inventory/boys/ButterFinger.webp",
+  "available": true,
+  "featured": false,
+  "order": 6
+}

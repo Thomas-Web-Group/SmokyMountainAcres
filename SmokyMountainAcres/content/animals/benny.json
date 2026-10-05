@@ -1,0 +1,10 @@
+{
+  "name": "Benny",
+  "animal_type": "Pig",
+  "sex": "Boy",
+  "birth_date": "Aug 1, 2026",
+  "image": "/assets/img/inventory/boys/Benny.webp",
+  "available": true,
+  "featured": false,
+  "order": 5
+}

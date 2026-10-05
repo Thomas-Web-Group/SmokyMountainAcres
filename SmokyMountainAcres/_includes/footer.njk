@@ -77,15 +77,27 @@
 
   <!-- Vendor JS Files -->
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/php-email-form/validate.js"></script>
   <script src="/assets/vendor/aos/aos.js"></script>
-  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="/assets/js/main.js"></script>
+  <!-- Page-specific libraries load only where used; main.js loads last -->
+  <script>
+    (function () {
+      var scripts = [];
+      if (document.querySelector('.init-swiper')) scripts.push('/assets/vendor/swiper/swiper-bundle.min.js');
+      if (document.querySelector('.glightbox')) scripts.push('/assets/vendor/glightbox/js/glightbox.min.js');
+      if (document.querySelector('.isotope-layout')) {
+        scripts.push('/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js', '/assets/vendor/isotope-layout/isotope.pkgd.min.js');
+      }
+      scripts.push('/assets/js/main.js');
+      (function next() {
+        if (!scripts.length) return;
+        var s = document.createElement('script');
+        s.src = scripts.shift();
+        s.onload = s.onerror = next;
+        document.body.appendChild(s);
+      })();
+    })();
+  </script>
 
   <script>function toggleScrolled() {
   const body = document.querySelector('body');
