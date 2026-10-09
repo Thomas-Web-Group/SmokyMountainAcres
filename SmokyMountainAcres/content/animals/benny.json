@@ -1,13 +1,14 @@
 {
-  "name": "Benny",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/boys/Benny.webp",
+  "price": "$100",
   "available": true,
+  "name": "Benny",
+  "featured": false,
+  "birth_date": "May 29, 2026",
+  "order": 5,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 5,
-  "price": "$100"
+  "image": "/assets/img/inventory/benny.jpg",
+  "description": "Double Wattled",
+  "animal_type": "Pig"
 }
