@@ -1,13 +1,14 @@
 {
-  "name": "Bean",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/boys/DSC01158.webp",
+  "price": "$100",
   "available": true,
+  "name": "Bean",
+  "featured": false,
+  "birth_date": "Aug 1, 2026",
+  "order": 4,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 4,
-  "price": "$100"
+  "image": "/assets/img/inventory/good-morning-.jpg",
+  "description": "tri-colored",
+  "animal_type": "Pig"
 }
