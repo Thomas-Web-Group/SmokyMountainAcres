@@ -7,7 +7,7 @@
   "birth_date": "Aug 1, 2026",
   "order": 12,
   "sold": false,
-  "pending": true,
+  "pending": false,
   "image": "/assets/img/inventory/girls/DSC01162.webp",
   "animal_type": "Pig"
 }
