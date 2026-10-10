@@ -271,17 +271,14 @@
 
     const container = gallery.querySelector('.isotope-container');
     const sentinel = gallery.querySelector('[data-gallery-sentinel]');
-    const loadButton = gallery.querySelector('[data-gallery-load-more]');
     const status = gallery.querySelector('[data-gallery-status]');
+    const loadingText = gallery.querySelector('[data-gallery-loading]');
     const feedUrl = gallery.dataset.galleryFeed;
     const batchSize = Number(gallery.dataset.galleryBatchSize) || 16;
     let photos = null;
     let nextIndex = container.querySelectorAll('.isotope-item').length;
     let isLoading = false;
     let autoLoadPaused = false;
-    let userScrollIntent = false;
-    let previousScrollY = window.scrollY;
-    let scrollIntentTimeout;
 
     function createGalleryItem(photo) {
       const item = document.createElement('div');
@@ -291,7 +288,7 @@
       image.src = photo.image;
       image.className = 'img-fluid';
       image.alt = photo.alt || photo.title || 'Farm gallery photo';
-      image.loading = 'lazy';
+      image.loading = 'eager';
       item.appendChild(image);
 
       const info = document.createElement('div');
@@ -321,28 +318,46 @@
       return item;
     }
 
+    let feedPromise = null;
+    function loadFeed() {
+      if (photos) return Promise.resolve();
+      if (!feedPromise) {
+        const start = performance.now();
+        feedPromise = fetch(feedUrl, { headers: { Accept: 'text/html' } })
+          .then((response) => {
+            if (!response.ok) throw new Error(`Gallery request failed: ${response.status}`);
+            return response.text();
+          })
+          .then((markup) => {
+            const dataElement = new DOMParser().parseFromString(markup, 'text/html').querySelector('[data-gallery-items]');
+            if (!dataElement) throw new Error('Gallery data was not found in the response.');
+            photos = JSON.parse(dataElement.textContent);
+            console.log(`[gallery] feed ready in ${Math.round(performance.now() - start)}ms`);
+          })
+          .catch((error) => {
+            feedPromise = null;
+            throw error;
+          });
+      }
+      return feedPromise;
+    }
+
     async function loadNextBatch() {
       if (isLoading || (photos && nextIndex >= photos.length)) return;
 
       isLoading = true;
-      loadButton.disabled = true;
+      const t0 = performance.now();
+      const log = (label) => console.log(`[gallery] ${label} +${Math.round(performance.now() - t0)}ms`);
       status.textContent = 'Loading more photos.';
+      log('loading message shown');
 
       try {
-        if (!photos) {
-          const response = await fetch(feedUrl, { headers: { Accept: 'text/html' } });
-          if (!response.ok) throw new Error(`Gallery request failed: ${response.status}`);
-
-          const pageMarkup = await response.text();
-          const feedDocument = new DOMParser().parseFromString(pageMarkup, 'text/html');
-          const dataElement = feedDocument.querySelector('[data-gallery-items]');
-          if (!dataElement) throw new Error('Gallery data was not found in the response.');
-          photos = JSON.parse(dataElement.textContent);
-        }
+        await loadFeed();
+        log('feed available');
 
         const batch = photos.slice(nextIndex, nextIndex + batchSize);
         if (!batch.length) {
-          loadButton.hidden = true;
+          loadingText.hidden = true;
           sentinel.hidden = true;
           return;
         }
@@ -353,8 +368,21 @@
 
         if (container.isotopeInstance) {
           container.isotopeInstance.appended(newItems);
-          imagesLoaded(newItems, () => container.isotopeInstance.layout());
         }
+
+        log('items added, waiting for images');
+        await new Promise((resolve) => {
+          const timeout = window.setTimeout(resolve, 20000);
+          imagesLoaded(newItems, () => {
+            window.clearTimeout(timeout);
+            resolve();
+          });
+        });
+        log('images loaded');
+        if (container.isotopeInstance) container.isotopeInstance.layout();
+        await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        if (nextIndex >= photos.length) loadingText.hidden = true;
+        log('batch complete');
 
         if (typeof glightbox.reload === 'function') {
           glightbox.reload();
@@ -363,50 +391,50 @@
         autoLoadPaused = false;
 
         if (nextIndex >= photos.length) {
-          loadButton.hidden = true;
           sentinel.hidden = true;
         }
       } catch (error) {
         autoLoadPaused = true;
-        status.textContent = 'Could not load more photos. Use the button to try again.';
+        status.textContent = 'Could not load more photos. Retrying shortly.';
+        window.setTimeout(() => {
+          autoLoadPaused = false;
+          if (observer) {
+            observer.unobserve(sentinel);
+            observer.observe(sentinel);
+          }
+        }, 5000);
       } finally {
         isLoading = false;
-        loadButton.disabled = false;
+        if (observer && !sentinel.hidden && !autoLoadPaused) {
+          observer.unobserve(sentinel);
+          observer.observe(sentinel);
+        }
       }
     }
 
-    function noteUserScroll(event) {
-      if (event.type === 'wheel' && event.deltaY <= 0) return;
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver((entries) => {
+          if (entries.some((entry) => entry.isIntersecting) && !autoLoadPaused) {
+            console.log('[gallery] sentinel intersected, starting load');
+            loadNextBatch();
+          }
+        }, { rootMargin: '0px 0px 700px 0px' })
+      : null;
 
-      userScrollIntent = true;
-      window.clearTimeout(scrollIntentTimeout);
-      scrollIntentTimeout = window.setTimeout(() => {
-        userScrollIntent = false;
-      }, 300);
+    // Warm the feed so the first scroll-triggered load needs no network round trip.
+    const prefetch = () => loadFeed().catch(() => {});
+    if ('requestIdleCallback' in window) requestIdleCallback(prefetch, { timeout: 3000 });
+    else window.setTimeout(prefetch, 1500);
+
+    if (observer) {
+      observer.observe(sentinel);
+    } else {
+      const onScroll = () => {
+        if (sentinel.hidden) return window.removeEventListener('scroll', onScroll);
+        if (sentinel.getBoundingClientRect().top <= window.innerHeight + 700) loadNextBatch();
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
     }
-
-    function checkAutoLoad() {
-      const currentScrollY = window.scrollY;
-      const movedDown = currentScrollY > previousScrollY;
-      previousScrollY = currentScrollY;
-      const nearListEnd = sentinel.getBoundingClientRect().top <= window.innerHeight + 600;
-
-      if (userScrollIntent && movedDown && !autoLoadPaused && nearListEnd) {
-        userScrollIntent = false;
-        window.clearTimeout(scrollIntentTimeout);
-        loadNextBatch();
-      }
-    }
-
-    loadButton.addEventListener('click', loadNextBatch);
-    window.addEventListener('wheel', noteUserScroll, { passive: true });
-    window.addEventListener('touchmove', noteUserScroll, { passive: true });
-    window.addEventListener('keydown', (event) => {
-      if (['ArrowDown', 'PageDown', ' ', 'End'].includes(event.key)) {
-        noteUserScroll(event);
-      }
-    });
-    window.addEventListener('scroll', checkAutoLoad, { passive: true });
   }
 
   initGalleryInfiniteScroll();

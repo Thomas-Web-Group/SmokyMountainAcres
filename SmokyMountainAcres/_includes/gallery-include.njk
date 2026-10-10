@@ -80,8 +80,8 @@
       {% if page.url == '/gallery/' %}
         <div class="text-center mt-4" data-gallery-loader>
           <p class="visually-hidden" data-gallery-status aria-live="polite"></p>
+          <div class="gallery-loading d-flex justify-content-center align-items-center gap-2 w-100 py-4 fs-5 fw-semibold" data-gallery-loading role="status"><span class="spinner-border spinner-border-sm" aria-hidden="true"></span><span>Loading...</span></div>
           <div class="py-1" data-gallery-sentinel aria-hidden="true"></div>
-          <button type="button" class="btn btn-outline-secondary" data-gallery-load-more aria-controls="gallery-grid">Load More Photos</button>
         </div>
         <script type="application/json" data-gallery-items>{{ gallery | dump | safe }}</script>
       {% endif %}

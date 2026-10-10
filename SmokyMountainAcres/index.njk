@@ -50,7 +50,7 @@ layout: 'base.njk'
       <div class="container section-title" data-aos="fade-up">
         <div class="section-title-row">
           <img class="text-decoration-left" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
-          <h2>OUR LIVESTOCK</h2>
+          <h2>SALE BARN</h2>
           <img class="text-decoration-right" src="/assets/img/Smoky Mountain Acres/text-decoration-half-leaf.webp" alt="">
         </div>
         <p>Meet the boys and girls featured in our Sale Barn.</p>
@@ -88,11 +88,17 @@ layout: 'base.njk'
               {% for animal in livestock %}
                 <div class="swiper-slide">
                   <div class="team">
+                    {% if animal.image %}
                     <div class="pic">
-                      <img src="{{ animal.image }}" alt="{{ animal.name }} ({{ animal.gender }}) from the Smoky Mountain Acres Sale Barn" class="img-fluid">
+                      <img src="{{ animal.image }}" alt="{{ animal.name }}{% if animal.sex %} ({{ animal.sex }}){% endif %} from the Smoky Mountain Acres Sale Barn" class="img-fluid" onerror="this.closest('.pic').hidden=true">
+                      {% if animal.sold %}<span class="status-stamp status-stamp-sold">SOLD</span>{% elif animal.pending %}<span class="status-stamp status-stamp-pending">PENDING</span>{% endif %}
                     </div>
+                    {% endif %}
                     <h3>{{ animal.name }}</h3>
-                    <p>Gender: {{ animal.gender }}<br>Approx. DOB: {{ animal.approxDob }}</p>
+                    <p>
+                      {% if animal.sex %}Gender: {{ animal.sex }}<br>{% endif %}
+                      {% if animal.birth_date %}Approx. DOB: {{ animal.birth_date }}{% endif %}
+                    </p>
                   </div>
                 </div>
               {% endfor %}

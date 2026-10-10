@@ -2860,3 +2860,6 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+.gallery-loading[hidden] {
+  display: none !important;
+}
