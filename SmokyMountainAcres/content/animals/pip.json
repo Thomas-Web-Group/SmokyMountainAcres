@@ -1,13 +1,14 @@
 {
-  "name": "Pip",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/boys/DSC01155.webp",
+  "price": "$100",
   "available": true,
+  "name": "Pip",
+  "featured": false,
+  "birth_date": "Aug 1, 2026",
+  "order": 1,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 1,
-  "price": "$100"
+  "image": "/assets/img/inventory/boys/DSC01155.webp",
+  "description": "Mostly ginger with few spots",
+  "animal_type": "Pig"
 }
