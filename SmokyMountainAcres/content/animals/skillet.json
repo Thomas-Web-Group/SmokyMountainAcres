@@ -1,13 +1,14 @@
 {
-  "name": "Skillet",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/boys/Skillet.webp",
+  "price": "$100",
   "available": true,
+  "name": "Skillet",
+  "featured": false,
+  "birth_date": "May 29, 2026",
+  "order": 8,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 8,
-  "price": "$100"
+  "image": "/assets/img/inventory/skillet.jpg",
+  "description": "Double wattled",
+  "animal_type": "Pig"
 }
