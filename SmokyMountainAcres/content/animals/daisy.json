@@ -6,7 +6,7 @@
   "featured": false,
   "birth_date": "Aug 1, 2026",
   "order": 13,
-  "sold": false,
+  "sold": true,
   "pending": false,
   "image": "/assets/img/inventory/daisy.jpg",
   "description": "tri-colored",
