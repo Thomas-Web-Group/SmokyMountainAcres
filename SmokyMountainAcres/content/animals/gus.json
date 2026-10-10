@@ -1,13 +1,14 @@
 {
-  "name": "Gus",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/boys/DSC01156.webp",
+  "price": "$100",
   "available": true,
+  "name": "Gus",
+  "featured": false,
+  "birth_date": "Aug 1, 2026",
+  "order": 2,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 2,
-  "price": "$100"
+  "image": "/assets/img/inventory/gus.jpg",
+  "description": "Double wattled",
+  "animal_type": "Pig"
 }
