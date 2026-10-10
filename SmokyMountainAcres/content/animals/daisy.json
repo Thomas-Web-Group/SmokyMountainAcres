@@ -1,13 +1,14 @@
 {
-  "name": "Daisy",
-  "animal_type": "Pig",
   "sex": "Girl",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/girls/DSC01163.webp",
+  "price": "$125",
   "available": true,
+  "name": "Daisy",
+  "featured": false,
+  "birth_date": "Aug 1, 2026",
+  "order": 13,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 13,
-  "price": "$125"
+  "image": "/assets/img/inventory/daisy.jpg",
+  "description": "tri-colored",
+  "animal_type": "Pig"
 }
