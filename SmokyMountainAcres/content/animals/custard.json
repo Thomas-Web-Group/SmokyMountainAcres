@@ -1,13 +1,13 @@
 {
-  "name": "Custard",
-  "animal_type": "Pig",
   "sex": "Girl",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/girls/Custard.webp",
+  "price": "$125",
   "available": true,
+  "name": "Custard",
+  "featured": false,
+  "birth_date": "May 29, 2026",
+  "order": 9,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 9,
-  "price": "$125"
+  "image": "/assets/img/inventory/custard.jpeg",
+  "animal_type": "Pig"
 }
