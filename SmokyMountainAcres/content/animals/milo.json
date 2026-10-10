@@ -1,13 +1,14 @@
 {
-  "name": "Milo",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/boys/DSC01157.webp",
+  "price": "$100",
   "available": true,
+  "name": "Milo",
+  "featured": false,
+  "birth_date": "Aug 1, 2026",
+  "order": 3,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 3,
-  "price": "$100"
+  "image": "/assets/img/inventory/milo.jpg",
+  "description": "Double wattled",
+  "animal_type": "Pig"
 }
