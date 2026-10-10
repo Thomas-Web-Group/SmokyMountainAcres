@@ -1,13 +1,14 @@
 {
-  "name": "Butterfinger",
-  "animal_type": "Pig",
   "sex": "Boy",
-  "birth_date": "Feb 1, 2026",
-  "image": "/assets/img/inventory/boys/ButterFinger.webp",
+  "price": "$100",
   "available": true,
+  "name": "Butterfinger",
+  "featured": false,
+  "birth_date": "Jan 1, 2026",
+  "order": 6,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 6,
-  "price": "$100"
+  "image": "/assets/img/inventory/butterfinger.jpg",
+  "description": "Adorable floppy ears, extremely docile",
+  "animal_type": "Pig"
 }
