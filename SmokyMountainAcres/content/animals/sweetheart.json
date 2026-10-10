@@ -1,13 +1,14 @@
 {
-  "name": "Sweetheart",
-  "animal_type": "Pig",
   "sex": "Girl",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/girls/DSC01161.webp",
+  "price": "$125",
   "available": true,
+  "name": "Sweetheart",
+  "featured": false,
+  "birth_date": "Aug 1, 2026",
+  "order": 11,
   "sold": false,
   "pending": false,
-  "featured": false,
-  "order": 11,
-  "price": "$125"
+  "image": "/assets/img/inventory/sweetheart.jpg",
+  "description": "Double wattled",
+  "animal_type": "Pig"
 }
