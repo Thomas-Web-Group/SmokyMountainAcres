@@ -1,13 +1,13 @@
 {
   "sex": "Girl",
+  "price": "$125",
   "available": true,
   "name": "Sally",
   "featured": false,
   "birth_date": "Aug 1, 2026",
   "order": 10,
-  "price": "$125",
-  "sold": false,
-  "pending": true,
+  "sold": true,
+  "pending": false,
   "image": "/assets/img/inventory/girls/Sally.webp",
   "animal_type": "Pig"
 }
