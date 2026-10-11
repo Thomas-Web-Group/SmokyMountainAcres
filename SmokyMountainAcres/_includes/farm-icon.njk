@@ -1,0 +1,13 @@
+{# Reference icons by file name in /assets/icons (without .png) #}
+{% macro farmIcon(name, className='farm-icon', size=48, alt='') %}
+  <img
+    src="/assets/icons/{{ name }}.png"
+    class="{{ className }}"
+    width="{{ size }}"
+    height="{{ size }}"
+    alt="{{ alt }}"
+    {% if not alt %}aria-hidden="true"{% endif %}
+    loading="lazy"
+    decoding="async"
+  >
+{% endmacro %}

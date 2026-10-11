@@ -1,3 +1,5 @@
+{% from "farm-icon.njk" import farmIcon %}
+
     <!-- Contact Section -->
     <section id="contact" class="contact section  paper-texture">
 
@@ -28,7 +30,7 @@
 
           <div class="col-lg-4">
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              {{ farmIcon('location-marker', 'info-icon', 40) }}
               <div>
                 <h3>Address</h3>
                 <p>ASK FOR STREET, Cosby, TN 37722</p>
@@ -36,7 +38,7 @@
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
+              {{ farmIcon('rooster', 'info-icon', 40) }}
               <div>
                 <h3>Call or Text</h3>
                 <p><a href="tel:+14232482218">423.248.2218</a>
@@ -45,7 +47,7 @@
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
+              {{ farmIcon('farmhouse', 'info-icon', 40) }}
               <div>
                 <h3>Email Us</h3>
                 <p>
@@ -97,14 +99,14 @@
                 <div class="col-md-12">
                   <select class="form-select" name="interest" required>
                     <option value="" selected disabled>What are you interested in?</option>
-                    <option value="Kunekune">🐷 Kunekune Pigs</option>
-                    <option value="Red Wattle">🐖 Red Wattle Pigs</option>
-                    <option value="Chickens">🐔 Chickens</option>
-                    <option value="Eggs">🥚 Eggs</option>
-                    <option value="Raw Milk">🥛 Raw Milk</option>
-                    <option value="Sheep">🐑 Sheep</option>
-                    <option value="Pigs">🐽 Pigs</option>
-                    <option value="Farm Tour">🚜 Farm Tour</option>
+                    <option value="Kunekune">Kunekune Pigs</option>
+                    <option value="Red Wattle">Red Wattle Pigs</option>
+                    <option value="Chickens">Chickens</option>
+                    <option value="Eggs">Eggs</option>
+                    <option value="Raw Milk">Raw Milk</option>
+                    <option value="Sheep">Sheep</option>
+                    <option value="Pigs">Pigs</option>
+                    <option value="Farm Tour">Farm Tour</option>
                   </select>
                 </div>
 

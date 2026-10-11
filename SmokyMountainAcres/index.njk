@@ -31,9 +31,9 @@ layout: 'base.njk'
 
           <div class="col-lg-7 text-center d-flex align-items-center justify-content-center">
             <img
-              src="assets/img/Smoky Mountain Acres/SmokyMountainAcresLogo.webp"
+              src="/assets/img/sma-logo.png"
               alt="Smoky Mountain Acres"
-              class="img-fluid"
+              class="img-fluid hero-logo"
             >
           </div>
 
@@ -112,70 +112,6 @@ layout: 'base.njk'
     {% include "CTA1.njk" %}
 
     {% include "farm-values.njk"%}
-
-    {% set gallery = [
-      {
-        image: "/assets/img/Smoky Mountain Acres/PigsEatingFromMama.webp",
-        category: "pigs",
-        title: "Kune Kune Pigs",
-        description: "Our friendly pasture-raised Kune Kune pigs."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/PennyTheJuliana2.webp",
-        category: "pigs",
-        title: "Juliana Pigs",
-        description: "Our very first juliana piglet named Penny."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/PigsandChickens.webp",
-        category: "pigs",
-        title: "Pigs and Chickens",
-        description: "Our pasture-raised Kune Kune pigs get along great with the chickens."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/barredRock1.webp",
-        category: "chickens",
-        title: "Chickens",
-        description: "Our chickens."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/FarmerJWithChickens.webp",
-        category: "chickens",
-        title: "Chickens",
-        description: "Farmer J with the chickens."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/FunnyChickenChase.webp",
-        category: "chickens",
-        title: "Chicken Chase",
-        description: "We get a kick out of our chickens."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/FarmerJBetweenFences.webp",
-        category: "farm-life",
-        title: "Working hard",
-        description: "At it again!"
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/KidsWalkingByTower.webp",
-        category: "farm-life",
-        title: "Play Later",
-        description: "Disciplined farmers walking past their play fort do do their chores."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/RoughPasture.webp",
-        category: "farm-life",
-        title: "How it Started",
-        description: "This is what the pasture used to look like."
-      },
-      {
-        image: "/assets/img/Smoky Mountain Acres/HWYCosbyView1.webp",
-        category: "other",
-        title: "Nearby View from Cosby",
-        description: "A beautiful view on the drive in!"
-      }
-    ] %}
-    {% include "gallery-include.njk"%}
 
 
 

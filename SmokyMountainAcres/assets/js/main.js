@@ -92,17 +92,68 @@
   document.addEventListener('scroll', toggleScrollTop);
 
   /**
-   * Animation on scroll function and init
+   * Scroll reveal. Replaces AOS, which cached element positions once at init and
+   * went stale after lazy images/iframes shifted the layout, so sections revealed late.
+   * Content is visible by default; hidden states are only applied here, after
+   * IntersectionObserver is confirmed available, and only to elements below the fold.
    */
+  const revealObserver = (function () {
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) return null;
+    try {
+      const reveal = (el) => {
+        revealObserver.unobserve(el);
+        el.classList.add('is-revealed');
+        const done = () => el.classList.remove('reveal', 'is-revealed');
+        el.addEventListener('transitionend', (e) => { if (e.target === el) done(); }, { once: true });
+        setTimeout(done, 1800);
+      };
+      // A jump past an element (reload with restored scroll, anchor link) never intersects,
+      // so the observer stays silent; sweep for anything already above the viewport.
+      let sweepQueued = false;
+      const sweep = () => {
+        sweepQueued = false;
+        document.querySelectorAll('.reveal:not(.is-revealed)').forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight * 0.9) reveal(el);
+        });
+      };
+      window.addEventListener('scroll', () => {
+        if (!sweepQueued) { sweepQueued = true; requestAnimationFrame(sweep); }
+      }, { passive: true });
+      window.addEventListener('load', sweep);
+      return new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting || entry.boundingClientRect.top < 0) reveal(entry.target);
+        });
+      }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 });
+    } catch (err) {
+      return null;
+    }
+  })();
+
+
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    if (!revealObserver) return;
+    try {
+      document.querySelectorAll('[data-aos]:not([data-reveal-init])').forEach((el) => {
+        el.setAttribute('data-reveal-init', '');
+        // Already on screen at load: leave visible, never hide it
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return;
+        const delay = parseInt(el.getAttribute('data-aos-delay'), 10);
+        if (delay) el.style.transitionDelay = delay + 'ms';
+        el.classList.add('reveal');
+        if (el.getAttribute('data-aos') === 'zoom-in') el.classList.add('reveal-zoom');
+        revealObserver.observe(el);
+      });
+    } catch (err) {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('reveal'));
+    }
   }
-  window.addEventListener('load', aosInit);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aosInit);
+  } else {
+    aosInit();
+  }
 
   /**
    * Init swiper sliders

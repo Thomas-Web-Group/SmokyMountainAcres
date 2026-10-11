@@ -1,3 +1,5 @@
+{% from "farm-icon.njk" import farmIcon %}
+
 <!-- What We Offer Section -->
 <section id="services" class="services section paper-texture">
 
@@ -22,7 +24,7 @@
       <!-- Livestock Sales -->
       <div class="col-lg-3 col-md-6">
         <div class="offer-item text-center">
-          <img src="/assets/img/icons/icon-chicken.png" alt="Livestock Sales" class="offer-icon">
+          <span class="offer-icon-wrap">{{ farmIcon('sale-barn', 'offer-icon', 48) }}</span>
 
           <h3>Livestock Sales</h3>
 
@@ -30,7 +32,7 @@
             A few times a year we offer select animals raised on pasture with care.
           </p>
 
-          <a href="/livestock/" class="offer-link">
+          <a href="/sale-barn/" class="offer-link">
             VIEW CURRENT OFFERINGS <i class="bi bi-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
@@ -39,7 +41,7 @@
       <!-- Raw Milk -->
       <div class="col-lg-3 col-md-6">
         <div class="offer-item text-center">
-          <img src="/assets/img/icons/icon-milk.png" alt="Raw Milk and Herd Share" class="offer-icon">
+          <span class="offer-icon-wrap">{{ farmIcon('milk-bottle', 'offer-icon', 48) }}</span>
 
           <h3>Raw Milk / Herd Share</h3>
 
@@ -56,7 +58,7 @@
       <!-- Farm Tours -->
       <div class="col-lg-3 col-md-6">
         <div class="offer-item text-center">
-          <img src="/assets/img/icons/icon-farm-tour.png" alt="Farm Tours" class="offer-icon">
+          <span class="offer-icon-wrap">{{ farmIcon('farm-tour', 'offer-icon', 48) }}</span>
 
           <h3>Affordable Farm Tours</h3>
 
@@ -73,7 +75,7 @@
       <!-- Whole Hogs -->
       <div class="col-lg-3 col-md-6">
         <div class="offer-item text-center">
-          <img src="/assets/img/icons/icon-pig.png" alt="Whole Hogs and Farm Goods" class="offer-icon">
+          <span class="offer-icon-wrap">{{ farmIcon('pig', 'offer-icon', 48) }}</span>
 
           <h3>Whole Hogs /<br>Farm Goods</h3>
 

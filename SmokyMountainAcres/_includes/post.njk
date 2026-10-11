@@ -42,8 +42,8 @@ layout: 'base.njk'
 
                 <div class="meta-top">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{ author }}</li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
+                    <li class="d-flex align-items-center"><img class="meta-icon" src="/assets/icons/chicken.png" width="20" height="20" alt="" aria-hidden="true">{{ author }}</li>
+                    <li class="d-flex align-items-center"><img class="meta-icon" src="/assets/icons/calendar.png" width="20" height="20" alt="" aria-hidden="true">
                       <time datetime="{{ page.date.toISOString() }}">{{ date | postDate }}
                     </li>
                   </ul>
@@ -55,12 +55,12 @@ layout: 'base.njk'
                 </div><!-- End post content -->
 
                 <div class="meta-bottom">
-                  <i class="bi bi-folder"></i>
+                  <img class="meta-icon" src="/assets/icons/barn.png" width="20" height="20" alt="" aria-hidden="true">
                   <ul class="cats">
                     <li>{{ category }}</li>
                   </ul>
 
-                  <i class="bi bi-tags"></i>
+                  <img class="meta-icon" src="/assets/icons/feed-bucket.png" width="20" height="20" alt="" aria-hidden="true">
                     <ul class="tags">
                       {% for tag in tags %}
                         {% if tag != "posts" %}

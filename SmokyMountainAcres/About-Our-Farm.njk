@@ -4,6 +4,8 @@ description: "Learn why Smoky Mountain Acres exists: a family farmstead in the S
 layout: 'base.njk'
 ---
 
+{% from "farm-icon.njk" import farmIcon %}
+
 <section id="about" class="about section paper-texture">
   <div class="container section-title" data-aos="fade-up">
     <div class="section-title-row">
@@ -38,10 +40,10 @@ layout: 'base.njk'
           We are not trying to make farming look effortless or turn a few attractive words into a guarantee. We are trying to make our choices understandable: give animals meaningful access to pasture, feed them responsibly, use fewer outside inputs where we can, and stay honest about what our practices and labels do and do not mean.
         </p>
         <ul>
-          <li><i class="bi bi-check2-all"></i> <span>Pigs, chickens, and sheep are raised with pasture access and room for natural behavior.</span></li>
-          <li><i class="bi bi-check2-all"></i> <span>Supplemental feed is organic and appropriate for each species, without implying USDA Organic certification.</span></li>
-          <li><i class="bi bi-check2-all"></i> <span>We do not use synthetic fertilizers or pesticides on our farm and manage the land through observation, animal movement, and rest.</span></li>
-          <li><i class="bi bi-check2-all"></i> <span>We want visitors, customers, and our own family to know how the animals live and what goes into their care.</span></li>
+          <li>{{ farmIcon('egg', 'list-inline-icon', 20) }} <span>Pigs, chickens, and sheep are raised with pasture access and room for natural behavior.</span></li>
+          <li>{{ farmIcon('egg', 'list-inline-icon', 20) }} <span>Supplemental feed is organic and appropriate for each species, without implying USDA Organic certification.</span></li>
+          <li>{{ farmIcon('egg', 'list-inline-icon', 20) }} <span>We do not use synthetic fertilizers or pesticides on our farm and manage the land through observation, animal movement, and rest.</span></li>
+          <li>{{ farmIcon('egg', 'list-inline-icon', 20) }} <span>We want visitors, customers, and our own family to know how the animals live and what goes into their care.</span></li>
         </ul>
       </div>
     </div>
@@ -66,7 +68,7 @@ layout: 'base.njk'
     <div class="row gy-4 justify-content-center">
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="offer-item text-center">
-          <i class="bi bi-tree offer-icon" aria-hidden="true"></i>
+          {{ farmIcon('farmstead', 'offer-icon', 48) }}
           <h3>Animals on Pasture</h3>
           <p>Pigs root, chickens scratch, and sheep graze. Pasture is an environment for natural behavior, not just a phrase on a product page.</p>
           <a href="/our-practices/" class="offer-link">HOW WE FARM</a>
@@ -74,7 +76,7 @@ layout: 'base.njk'
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="offer-item text-center">
-          <i class="bi bi-heart offer-icon" aria-hidden="true"></i>
+          {{ farmIcon('egg', 'offer-icon', 48) }}
           <h3>Food With a Story</h3>
           <p>We want eggs, whole hogs, livestock, and future farm products to remain connected to the animals and people behind them.</p>
           <a href="/livestock/" class="offer-link">VIEW AVAILABILITY</a>
@@ -82,7 +84,7 @@ layout: 'base.njk'
       </div>
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="offer-item text-center">
-          <i class="bi bi-people offer-icon" aria-hidden="true"></i>
+          {{ farmIcon('mountains', 'offer-icon', 48) }}
           <h3>A Farm to Share</h3>
           <p>We are creating a place where families can meet animals, ask direct questions, and see a quieter side of life in the Smoky Mountains.</p>
           <a href="/farm-tours/" class="offer-link">PLAN A FARM VISIT</a>
