@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#f3f2e9">
+    <meta name="description" content="Add the Smoky Mountain Acres logo to your farm photos right in your browser.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="SMA Watermark">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Photo Watermark Tool | Smoky Mountain Acres</title>
+    <link rel="icon" href="/assets/img/sma-logo.png">
+    <link rel="apple-touch-icon" href="/assets/img/sma-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/watermark.css">
+    <script src="/assets/js/watermark.js" defer></script>
+  </head>
+  <body>
+    <main class="watermark-app">
+      <header class="app-header">
+        <a class="brand" href="/" aria-label="Smoky Mountain Acres home">
+          <img src="/assets/img/sma-logo.png" alt="">
+          <span>Smoky Mountain Acres</span>
+        </a>
+        <p class="eyebrow">FARM PHOTO TOOL</p>
+        <h1>Make it yours.</h1>
+        <p class="intro">Add our farm logo to your photos, ready to save or share.</p>
+      </header>
+
+      <section class="photo-picker card" aria-labelledby="photo-picker-heading">
+        <div class="section-heading">
+          <span class="step-number" aria-hidden="true">1</span>
+          <div>
+            <h2 id="photo-picker-heading">Choose your photos</h2>
+            <p>JPEG, PNG or WebP. You can add more than one.</p>
+          </div>
+        </div>
+        <input id="photo-input" class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" aria-label="Choose JPEG, PNG or WebP photos" multiple>
+        <button id="choose-photos" class="button button-primary select-button" type="button">
+          <span aria-hidden="true">＋</span> Select Photos
+        </button>
+        <p class="privacy-note"><span aria-hidden="true">🔒</span> Your photos are processed on this device and are never uploaded.</p>
+        <p id="drop-zone" class="drop-zone">Or drag and drop photos here</p>
+        <p id="photo-count" class="photo-count" aria-live="polite"></p>
+      </section>
+
+      <section class="preview-section card" aria-labelledby="preview-heading">
+        <div class="section-heading">
+          <span class="step-number" aria-hidden="true">2</span>
+          <div>
+            <h2 id="preview-heading">Preview</h2>
+            <p id="preview-details">Your watermarked photo will appear here.</p>
+          </div>
+        </div>
+        <div id="preview-frame" class="preview-frame">
+          <div id="empty-preview" class="empty-preview">
+            <span class="empty-icon" aria-hidden="true">▧</span>
+            <p>Select a photo to see your watermark</p>
+          </div>
+          <canvas id="preview-canvas" class="preview-canvas" aria-label="Preview of your photo with the Smoky Mountain Acres watermark" hidden></canvas>
+        </div>
+        <p id="watermark-color-status" class="watermark-color-status" aria-live="polite"></p>
+      </section>
+
+      <section id="photo-list-section" class="photo-list-section card" aria-labelledby="photo-list-heading" hidden>
+        <div class="section-heading">
+          <div>
+            <h2 id="photo-list-heading">Your photos</h2>
+            <p>Choose a photo to preview and save it with the same settings.</p>
+          </div>
+        </div>
+        <ul id="photo-list" class="photo-list"></ul>
+      </section>
+
+      <section class="actions card" aria-label="Save or share your photo">
+        <button id="save-photo" class="button button-primary action-button" type="button" disabled>Save Photo</button>
+        <button id="share-photo" class="button button-secondary action-button" type="button" disabled>Share Photo</button>
+        <p id="app-message" class="app-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="settings-section card" aria-labelledby="settings-heading">
+        <div class="section-heading">
+          <span class="step-number" aria-hidden="true">3</span>
+          <div>
+            <h2 id="settings-heading">Make it just right</h2>
+            <p>Your settings are remembered on this device.</p>
+          </div>
+        </div>
+
+        <div class="setting">
+          <div class="setting-label">
+            <label for="size-setting">Watermark size</label>
+            <output id="size-value" for="size-setting">30%</output>
+          </div>
+          <input id="size-setting" type="range" min="15" max="50" step="1" value="30">
+          <div class="range-labels"><span>Smaller</span><span>Larger</span></div>
+        </div>
+
+        <div class="setting">
+          <label for="color-setting">Watermark color</label>
+          <select id="color-setting">
+            <option value="auto">Auto (best contrast)</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+          </select>
+        </div>
+
+        <div class="setting">
+          <label for="position-setting">Position</label>
+          <select id="position-setting">
+            <option value="bottom-right">Bottom Right</option>
+            <option value="bottom-left">Bottom Left</option>
+            <option value="top-right">Top Right</option>
+            <option value="top-left">Top Left</option>
+          </select>
+        </div>
+
+        <div class="setting">
+          <div class="setting-label">
+            <label for="opacity-setting">Watermark opacity</label>
+            <output id="opacity-value" for="opacity-setting">80%</output>
+          </div>
+          <input id="opacity-setting" type="range" min="20" max="100" step="1" value="80">
+          <div class="range-labels"><span>Subtle</span><span>Strong</span></div>
+        </div>
+
+        <div class="setting">
+          <div class="setting-label">
+            <label for="padding-setting">Edge padding</label>
+            <output id="padding-value" for="padding-setting">3%</output>
+          </div>
+          <input id="padding-setting" type="range" min="0" max="10" step="1" value="3">
+          <div class="range-labels"><span>Closer to edge</span><span>Farther in</span></div>
+        </div>
+
+        <button id="reset-settings" class="button button-secondary reset-button" type="button">Reset to Defaults</button>
+      </section>
+
+    </main>
+  </body>
+</html>
