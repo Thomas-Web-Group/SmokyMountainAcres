@@ -6,7 +6,7 @@
   "featured": false,
   "birth_date": "May 29, 2026",
   "order": 9,
-  "sold": false,
+  "sold": true,
   "pending": false,
   "image": "/assets/img/inventory/custard.jpeg",
   "animal_type": "Pig"
