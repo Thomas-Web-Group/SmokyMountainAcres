@@ -1,13 +1,13 @@
 {
-  "name": "Winnie",
-  "animal_type": "Pig",
   "sex": "Girl",
-  "birth_date": "Aug 1, 2026",
-  "image": "/assets/img/inventory/girls/DSC01164.webp",
+  "price": "$125",
   "available": true,
-  "sold": false,
-  "pending": false,
+  "name": "Winnie",
   "featured": false,
+  "birth_date": "Aug 1, 2026",
   "order": 14,
-  "price": "$125"
+  "sold": false,
+  "pending": true,
+  "image": "/assets/img/inventory/girls/DSC01164.webp",
+  "animal_type": "Pig"
 }
