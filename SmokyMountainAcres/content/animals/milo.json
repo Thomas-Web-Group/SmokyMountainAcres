@@ -7,7 +7,7 @@
   "birth_date": "Aug 1, 2026",
   "order": 3,
   "sold": false,
-  "pending": false,
+  "pending": true,
   "image": "/assets/img/inventory/milo.jpg",
   "description": "Double wattled",
   "animal_type": "Pig"
