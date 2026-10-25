@@ -7,7 +7,7 @@
   "birth_date": "Aug 1, 2026",
   "order": 4,
   "sold": false,
-  "pending": false,
+  "pending": true,
   "image": "/assets/img/inventory/good-morning-.jpg",
   "description": "tri-colored",
   "animal_type": "Pig"
