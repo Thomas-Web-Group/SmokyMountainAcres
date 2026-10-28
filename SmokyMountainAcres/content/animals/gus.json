@@ -6,8 +6,8 @@
   "featured": false,
   "birth_date": "Aug 1, 2026",
   "order": 2,
-  "sold": false,
-  "pending": true,
+  "sold": true,
+  "pending": false,
   "image": "/assets/img/inventory/gus.jpg",
   "description": "Double wattled",
   "animal_type": "Pig"
