@@ -6,7 +6,7 @@
   "featured": false,
   "birth_date": "Aug 1, 2026",
   "order": -46,
-  "sold": false,
+  "sold": true,
   "pending": true,
   "image": "/assets/img/inventory/good-morning-.jpg",
   "description": "tri-colored",
