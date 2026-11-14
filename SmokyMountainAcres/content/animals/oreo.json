@@ -5,8 +5,9 @@
   "featured": false,
   "birth_date": "May 29, 2026",
   "sold": false,
-  "breed": "Kune",
+  "breed": "",
   "pending": false,
+  "image": "/assets/img/inventory/oreo-watermarked-1-.jpg",
   "description": "Black and white",
   "animal_type": "Pig"
 }
