@@ -7,7 +7,7 @@
   "birth_date": "May 29, 2026",
   "order": 5,
   "sold": false,
-  "pending": false,
+  "pending": true,
   "image": "/assets/img/inventory/benny1.jpeg",
   "description": "Double Wattled",
   "animal_type": "Pig"
