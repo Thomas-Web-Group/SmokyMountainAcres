@@ -1,0 +1,12 @@
+{
+  "price": "$150",
+  "available": true,
+  "name": "Oreo",
+  "featured": false,
+  "birth_date": "May 29, 2026",
+  "sold": false,
+  "breed": "Kune",
+  "pending": false,
+  "description": "Black and white",
+  "animal_type": "Pig"
+}
