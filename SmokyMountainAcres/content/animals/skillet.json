@@ -3,7 +3,7 @@
   "price": "$150",
   "available": true,
   "name": "Skillet",
-  "featured": false,
+  "featured": true,
   "birth_date": "May 29, 2026",
   "order": 8,
   "sold": false,
