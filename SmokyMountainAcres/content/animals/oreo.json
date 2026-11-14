@@ -2,7 +2,7 @@
   "price": "$150",
   "available": true,
   "name": "Oreo",
-  "featured": false,
+  "featured": true,
   "birth_date": "May 29, 2026",
   "sold": false,
   "breed": "",
